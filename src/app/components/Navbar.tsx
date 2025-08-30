@@ -78,15 +78,22 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
-                <button
-                  onClick={() => {
-                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                    setOpen(false);
-                  }}
-                  className="hover:text-brand transition-colors"
-                >
-                  Contact
-                </button>
+                
+              <Link
+  href="#contact"
+  onClick={(e) => {
+    e.preventDefault(); // Prevent default jump
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false); // Close mobile menu
+  }}
+  className="hover:text-brand transition-colors"
+>
+  Contact
+</Link>
+
               </div>
             </motion.div>
           </>
