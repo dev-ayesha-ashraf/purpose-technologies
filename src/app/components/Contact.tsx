@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 py-20 overflow-hidden">
+    <section className="relative w-full max-w-7xl mx-auto px-6 py-20 overflow-hidden" id="contact">
       {/* Decorative background */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none" />
 

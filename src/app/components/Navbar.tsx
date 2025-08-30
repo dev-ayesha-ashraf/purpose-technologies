@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="w-[95%] h-[80px] mx-auto my-6 bg-white rounded-full flex items-center justify-between px-8 relative z-50">
       <div className="text-2xl font-extrabold text-brand-dark tracking-tight">
-        <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]"/>
+        <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]" />
       </div>
       <ul className="hidden md:flex flex-1 justify-center space-x-10 text-lg font-medium text-brand-dark">
         <li>
@@ -20,17 +20,26 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="/about" className="hover:[#38A2D] transition-colors">
-            Contact
-          </Link>
+          <li>
+            <button
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                setOpen(false);
+              }}
+              className="hover:text-brand transition-colors"
+            >
+              Contact
+            </button>
+          </li>
+
         </li>
       </ul>
-    <button
-  onClick={() => setOpen(true)}
-  className="md:hidden p-2 rounded-lg text-[#38a2df] hover:bg-brand-light transition cursor-pointer"
->
-  <Menu size={28} />
-</button>
+      <button
+        onClick={() => setOpen(true)}
+        className="md:hidden p-2 rounded-lg text-[#38a2df] hover:bg-brand-light transition cursor-pointer"
+      >
+        <Menu size={28} />
+      </button>
 
       <AnimatePresence>
         {open && (
@@ -52,7 +61,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between mb-12">
                 <div className="text-2xl font-extrabold text-white tracking-tight">
-                  <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]"/>
+                  <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]" />
                 </div>
                 <button
                   onClick={() => setOpen(false)}
@@ -69,13 +78,15 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setOpen(false)}
+                <button
+                  onClick={() => {
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    setOpen(false);
+                  }}
                   className="hover:text-brand transition-colors"
                 >
                   Contact
-                </Link>
+                </button>
               </div>
             </motion.div>
           </>
