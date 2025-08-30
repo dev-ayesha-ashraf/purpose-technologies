@@ -18,7 +18,7 @@ export default function AjarPayCollectionsSection() {
         </div>
 
         {/* Right column - content (66% on md+) */}
-        <div className="w-full md:w-2/3 px-14">
+        <div className="w-full md:w-2/3 px-4 md:px-14">
           <div className="flex flex-col gap-6">
             <div>
               <ul className="flex items-center gap-3 text-sm text-gray-600">
@@ -36,7 +36,7 @@ export default function AjarPayCollectionsSection() {
                       />
                     </svg>
                   </span>
-                  <span className="font-semibold text-lg text-[#1A043F]">AJAR with ajarPay</span>
+                  <span className="font-semibold text-lg text-[#1A043F]">Purpose Technologies</span>
                 </li>
               </ul>
             </div>
