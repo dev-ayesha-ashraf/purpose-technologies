@@ -19,7 +19,7 @@ export default function Navbar() {
             Home
           </Link>
         </li>
-        <li>
+      
           <li>
             <button
               onClick={() => {
@@ -32,7 +32,7 @@ export default function Navbar() {
             </button>
           </li>
 
-        </li>
+        
       </ul>
       <button
         onClick={() => setOpen(true)}
