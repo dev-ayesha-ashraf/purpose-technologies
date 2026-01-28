@@ -27,7 +27,7 @@ export default function purpose_technologiesSection() {
                 </svg>
               </span>
               <span className="text-sm md:text-[16px] text-[#1A043F] font-mulish font-light md:font-normal">
-                Introducing purpose_technologies:
+                Introducing Purpose Technologies:
               </span>
             </li>
           </ul>
@@ -39,7 +39,7 @@ export default function purpose_technologiesSection() {
 
           {/* Paragraph */}
           <p className="text-gray-600 md:text-gray-700 font-mulish text-base md:text-[18px] font-light md:font-normal">
-            <strong>purpose_technologies</strong> serves as a payment facilitation platform,
+            <strong>Purpose Technologies</strong> serves as a payment facilitation platform,
             bridging the gap between worldwide and regional businesses and their
             customers, offering a secured and streamlined One-Click checkout
             solution while integrating key payment methods.

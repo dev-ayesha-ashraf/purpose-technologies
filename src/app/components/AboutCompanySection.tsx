@@ -38,12 +38,12 @@ export default function AboutCompanySection() {
           </div>
 
           <h2 className="text-2xl md:text-[35px] font-bold leading-snug text-[#1A043F]">
-            Empowering Merchants with purpose_technologies: A Seamless One-Click Checkout
+            Empowering Merchants with Purpose Technologies: A Seamless One-Click Checkout
             Integration
           </h2>
 
           <p className="text-gray-600">
-            purpose_technologies is actively working on integrating with leading wallet and
+            Purpose Technologies is actively working on integrating with leading wallet and
             card service providers to enhance its payment facilitation platform,
             making it compatible with various collection and payment methods.
             This will empower its merchants to offer a One-Click seamless

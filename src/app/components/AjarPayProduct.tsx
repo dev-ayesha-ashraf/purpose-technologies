@@ -7,7 +7,7 @@ export default function purpose_technologiesProducts() {
         
         {/* First Column */}
         <div className="relative bg-[#253885d4] rounded-[40px] font-mulish py-[40px] px-[50px] shadow space-y-6 text-white w-full lg:w-[40%]">
-          <h2 className="text-[25px] font-bold">purpose_technologies’s Products:</h2>
+          <h2 className="text-[25px] font-bold">Purpose Technologies’s Products:</h2>
           <ul className="space-y-3">
             <li className="font-medium">Collections (Pay-In Service)</li>
             <li className="flex items-center space-x-2">

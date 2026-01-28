@@ -70,7 +70,7 @@ const Contact = () => {
                 href="mailto:info@purposeTechnologies.com.pk"
                 className="text-[#38a2df] hover:underline"
               >
-                info@purposeTechnologies.com.pk
+                info@purposetechnologies.com.pk
               </Link>
             </div>
           </div>
