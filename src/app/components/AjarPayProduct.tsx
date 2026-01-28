@@ -4,7 +4,7 @@ export default function purpose_technologiesProducts() {
   return (
     <section className="relative pb-12 font-mulish mt-[20px] lg:mt-[-66px]">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
-        
+
         {/* First Column */}
         <div className="relative bg-[#253885d4] rounded-[40px] font-mulish py-[40px] px-[50px] shadow space-y-6 text-white w-full lg:w-[40%]">
           <h2 className="text-[25px] font-bold">Purpose Technologies’s Products:</h2>
@@ -35,7 +35,7 @@ export default function purpose_technologiesProducts() {
         {/* Second Column */}
         <div className="bg-white rounded-[20px] shadow p-6 space-y-6 w-full">
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-            
+
             {/* Icon List - Left on lg */}
             <ul className="space-y-4 lg:w-1/2 order-2 lg:order-1">
               <li className="flex items-center">
@@ -79,11 +79,10 @@ export default function purpose_technologiesProducts() {
             {/* Heading + Paragraph - Right on lg */}
             <div className="space-y-4 lg:w-1/2 order-1 lg:order-2">
               <h3 className="text-2xl font-semibold text-[#1A043F]">
-                purpose_technologies’s solution:
+                Purpose Technologies's solution:
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                One-Click seamless checkout solution for all sorts of collections
-                and payments. We serve following sectors/industries:
+                A fast, seamless one-click checkout for every kind of collection and payment. We proudly support the following industries:
               </p>
             </div>
 

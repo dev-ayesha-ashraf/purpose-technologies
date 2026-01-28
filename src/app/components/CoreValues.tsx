@@ -14,7 +14,7 @@ const coreValues: CoreValue[] = [
   {
     title: "Excellence",
     description:
-      "The markets in which we are active are experiencing growing competition, and our stakeholders now have a wide array of options. To achieve success and expansion, we must strive to excel in the services we provide, the quality of our products, and the condition of our facilities.",
+      "We strive to deliver the highest quality services and products, ensuring our merchants and stakeholders experience unparalleled reliability and value.",
     icon: (
       <path d="M12 2l2.39 4.85 5.35.78-3.87 3.77.91 5.32L12 14.9l-4.78 2.52.91-5.32-3.87-3.77 5.35-.78L12 2z" />
     ),
@@ -22,7 +22,7 @@ const coreValues: CoreValue[] = [
   {
     title: "Integrity",
     description:
-      "As a Payment Facilitation Platform situated in Pakistan, our prosperity hinges on the development of our merchants enabled by our exceptional services. Our stakeholders, customers, and society at large anticipate us to uphold elevated ethical values and professional benchmarks.",
+      "Ethical conduct and transparency guide every decision we make. We uphold professional standards that earn trust from our merchants, customers, and society.",
     icon: (
       <path d="M12 2l8 4v6c0 5.25-3.25 10.74-8 12-4.75-1.26-8-6.75-8-12V6l8-4zM11 14l6-6-1.41-1.42L11 11.17 8.41 8.59 7 10l4 4z" />
     ),
@@ -30,32 +30,33 @@ const coreValues: CoreValue[] = [
   {
     title: "Customer Focus",
     description:
-      "We must gain a comprehensive understanding of our customers’ and merchants’ requirements and be prepared to tailor our products and services accordingly. Our primary commitment should always be to prioritize the satisfaction of our customers and merchants.",
+      "Understanding our merchants’ and customers’ needs is central to everything we do. Our solutions are designed to simplify payments and enhance satisfaction.",
     icon: (
       <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
     ),
   },
-   {
-    title: "More Services",
-    description: "",
-    icon: <></>,
-    special: true,
-  },
   {
     title: "Meritocracy",
     description:
-      "We advocate providing opportunities and benefits to our employees based on their capabilities. We place value on recognizing accomplishments and offering top-tier career prospects to all.",
+      "We reward talent, hard work, and achievement. Opportunities and growth are earned based on performance and potential.",
     icon: <path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-3.5L6 22l1.5-8.5L2 9h7l3-7z" />,
   },
   {
     title: "Progressiveness",
     description:
-      "We are firm believers in contributing to the progress of society by embracing enlightened work practices, pioneering new products and processes, and fostering an entrepreneurial spirit.",
+      "We embrace innovation, continuous learning, and forward-thinking practices to foster growth for our business, community, and partners.",
     icon: (
       <path d="M12 2c-1.1 0-2 .9-2 2v7H7l5 5 5-5h-3V4c0-1.1-.9-2-2-2zm-7 18v2h14v-2H5z" />
     ),
   },
+  {
+    title: "More Services",
+    description: "",
+    icon: <></>,
+    special: true,
+  },
 ];
+
 
 function CoreValueCard({ title, description, icon, special }: CoreValue) {
   if (special) {
@@ -114,16 +115,11 @@ export default function CoreValues() {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-6 mt-2 text-[#1A043F]">
-          Core Values and Principles: Driving Force Behind Our Mission and Growth
+          Core Values That Drive Purpose Technologies
         </h2>
         <div className="flex justify-center">
           <p className="text-lg text-gray-700 mb-16 w-full lg:w-[45%]">
-            “Rooted in our commitment to excellence, integrity, and
-            customer-centricity, we strive to understand and cater to the
-            evolving needs of our stakeholders. Our culture fosters
-            meritocracy, encouraging growth and recognizing individual
-            achievements while driving forward a progressive ethos that fuels
-            innovation and societal advancement.”
+            “At Purpose Technologies, our foundation is built on excellence, integrity, and a customer-first approach. We cultivate a culture of meritocracy, celebrate achievement, and champion innovation to deliver cutting-edge payment solutions that empower merchants and society alike.”
           </p>
         </div>
 

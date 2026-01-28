@@ -38,21 +38,14 @@ export default function AboutCompanySection() {
           </div>
 
           <h2 className="text-2xl md:text-[35px] font-bold leading-snug text-[#1A043F]">
-            Empowering Merchants with Purpose Technologies: A Seamless One-Click Checkout
-            Integration
+            Powering Smarter Payments with Purpose Technologies
           </h2>
 
           <p className="text-gray-600">
-            Purpose Technologies is actively working on integrating with leading wallet and
-            card service providers to enhance its payment facilitation platform,
-            making it compatible with various collection and payment methods.
-            This will empower its merchants to offer a One-Click seamless
-            checkout solution to their customers.
+            Purpose Technologies is building a next-generation payment facilitation platform by integrating with leading wallet and card service providers. Our goal is to support a wide range of collection and payment methods, enabling merchants to deliver a fast, secure, and seamless One-Click checkout experience.
             <br />
             <br />
-            Merchants have the option to connect and integrate with purpose_technologies,
-            gaining access to an all-in-one, convenient One-Click checkout
-            solution.
+            By connecting with Purpose Technologies, merchants gain access to a unified checkout solution that simplifies integrations, reduces friction, and enhances the overall customer payment journey.
           </p>
 
           {/* Vision */}
@@ -72,9 +65,7 @@ export default function AboutCompanySection() {
             <div>
               <h3 className="font-bold text-xl">Our Vision</h3>
               <p className="text-gray-600">
-                To facilitate a smooth and unified One-Click checkout solution
-                for all merchants, enabling them to handle their digital
-                collections and payments effortlessly.
+                To become a trusted payment technology partner for merchants worldwide by delivering a unified, secure, and effortless One-Click checkout experience.
               </p>
             </div>
           </div>
@@ -96,8 +87,7 @@ export default function AboutCompanySection() {
             <div>
               <h3 className="font-bold text-xl">Our Mission</h3>
               <p className="text-gray-600">
-                To empower our merchants, stakeholders, and associates to
-                thrive, generate value for both individuals and the economy.
+                To simplify digital payments by empowering merchants with reliable technology, enabling business growth, operational efficiency, and meaningful economic impact.
               </p>
             </div>
           </div>
@@ -119,10 +109,7 @@ export default function AboutCompanySection() {
             <div>
               <h3 className="font-bold text-xl">Our Values</h3>
               <p className="text-gray-600">
-                Our values are based on the fundamental principles that define
-                our culture and are brought to life in our attitude and
-                behavior. It is our values that make us unique and stem from
-                basic principles.
+                We are guided by innovation, transparency, and trust. Our values shape our culture, influence our decisions, and drive our commitment to delivering dependable and scalable payment solutions.
               </p>
             </div>
           </div>

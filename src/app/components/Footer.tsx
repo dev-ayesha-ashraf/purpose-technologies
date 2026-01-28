@@ -70,7 +70,7 @@ export default function Footer() {
           width={120}
           height={60}
         />
-        <p className="mt-4 md:mt-0">© Copyright – purposeTechnologies 2023. All rights reserved.</p>
+        <p className="mt-4 md:mt-0">© Copyright – PurposeTechnologies 2023. All rights reserved.</p>
       </div>
     </footer>
   );

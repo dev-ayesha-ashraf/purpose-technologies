@@ -27,22 +27,19 @@ export default function purpose_technologiesSection() {
                 </svg>
               </span>
               <span className="text-sm md:text-[16px] text-[#1A043F] font-mulish font-light md:font-normal">
-                Introducing Purpose Technologies:
+                Introducing Purpose Technologies
               </span>
             </li>
           </ul>
 
           {/* Heading */}
           <h1 className="font-mulish font-bold text-2xl md:text-[52px] text-[#1A043F] leading-snug md:leading-[1.1em]">
-            Secured One-Click Checkout Solution for Global and Local Businesses
+            Powering Secure One-Click Payments Across the Globe
           </h1>
 
           {/* Paragraph */}
           <p className="text-gray-600 md:text-gray-700 font-mulish text-base md:text-[18px] font-light md:font-normal">
-            <strong>Purpose Technologies</strong> serves as a payment facilitation platform,
-            bridging the gap between worldwide and regional businesses and their
-            customers, offering a secured and streamlined One-Click checkout
-            solution while integrating key payment methods.
+            <strong>Purpose Technologies </strong>is a leading payment facilitation platform designed to connect global and local businesses with their customers seamlessly. Our secure and efficient One-Click checkout system simplifies the purchasing experience, integrating a wide range of essential payment options for maximum convenience.
           </p>
 
           {/* Buttons */}
