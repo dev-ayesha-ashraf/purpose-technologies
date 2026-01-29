@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, Send } from "lucide-react";
 
+
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -41,8 +42,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 py-20 overflow-hidden" id="contact">
-      {/* Decorative background */}
+    <section className="relative w-full max-w-7xl mx-auto  overflow-hidden" id="contact">
+      <div className="px-6 py-4">    {/* Decorative background */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none" />
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
@@ -67,10 +68,10 @@ const Contact = () => {
             <div>
               <h3 className="text-lg font-semibold text-gray-900">Our Email</h3>
               <Link
-                href="mailto:info@purposeTechnologies.com.pk"
+                href="mailto:contact@purposeTechnologies.com"
                 className="text-[#38a2df] hover:underline"
               >
-                info@purposetechnologies.com.pk
+                contact@purposetechnologies.com
               </Link>
             </div>
           </div>
@@ -138,7 +139,8 @@ const Contact = () => {
             <p className="text-sm mt-2 text-center font-medium text-gray-700">{response}</p>
           )}
         </motion.form>
-      </div>
+      </div></div>
+  
     </section>
   );
 };

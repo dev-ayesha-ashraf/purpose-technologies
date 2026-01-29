@@ -1,24 +1,24 @@
-
-import AboutCompanySection from "./components/AboutCompanySection";
-import AjarPayCollectionsSection from "./components/AjarPayCollectionsSection";
-import AjarPayProducts from "./components/AjarPayProduct";
-import AjarPaySection from "./components/AjarPaySection";
-import Clients from "./components/Clients";
-import Contact from "./components/Contact";
+// Page.tsx
+import AboutCompanySection from "./about/page";
+import CollectionsSection from "./collections/page";
+import Products from "./Products/page";
+import Clients from "./clients/page";
+import Contact from "./contact/page";
 import CoreValues from "./components/CoreValues";
-import Footer from "./components/Footer";
+
+import PurposeHome from "./components/Home";
 
 export default function Home() {
   return (
     <>
-    <AjarPaySection />
-    <AjarPayProducts />
-    <AboutCompanySection />
-    <CoreValues />
-    <AjarPayCollectionsSection />
-    <Clients />
-    <Contact />
-    <Footer />
+      <PurposeHome />
+      <Products />
+      <AboutCompanySection />
+      <CoreValues />
+      <CollectionsSection />
+      <Clients />
+      <Contact />
+
     </>
   )
 }

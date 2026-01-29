@@ -9,31 +9,31 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-[95%] h-[80px] mx-auto my-6 bg-white rounded-full flex items-center justify-between px-8 relative z-50">
-      <div className="text-2xl font-extrabold text-brand-dark tracking-tight">
-        <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]" />
+    <nav className="w-[95%] h-[80px] mx-auto my-6 bg-white rounded-[20px] flex items-center justify-between px-8 relative z-50 shadow-lg">
+      {/* Desktop Logo */}
+      <div className="cursor-pointer">
+        <img 
+          src="pt_logo.png" 
+          alt="Logo" 
+          className="h-[60px] w-auto object-contain" 
+        />
       </div>
+      
       <ul className="hidden md:flex flex-1 justify-center space-x-10 text-lg font-medium text-brand-dark">
         <li>
-          <Link href="/" className="text-[#38a2df]">
+          <Link href="/" className="text-[#38a2df] hover:text-brand transition-colors cursor-pointer">
             Home
           </Link>
         </li>
-      
-          <li>
-            <button
-              onClick={() => {
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                setOpen(false);
-              }}
-              className="hover:text-brand transition-colors"
-            >
+        <li>
+          <a href="/contact">
+            <button className="hover:text-brand transition-colors cursor-pointer">
               Contact
             </button>
-          </li>
-
-        
+          </a>
+        </li>
       </ul>
+      
       <button
         onClick={() => setOpen(true)}
         className="md:hidden p-2 rounded-lg text-[#38a2df] hover:bg-brand-light transition cursor-pointer"
@@ -50,7 +50,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 bg-black z-40 cursor-pointer"
             />
             <motion.div
               initial={{ x: "-100%" }}
@@ -60,8 +60,13 @@ export default function Navbar() {
               className="fixed top-0 left-0 h-full w-[60%] bg-[#1A043F] shadow-2xl z-50 flex flex-col p-8"
             >
               <div className="flex items-center justify-between mb-12">
-                <div className="text-2xl font-extrabold text-white tracking-tight">
-                  <img src="pt_logo.png" alt="" className="w-[100px] h-[100px]" />
+                {/* Mobile Logo */}
+                <div className="cursor-pointer">
+                  <img 
+                    src="pt_logo.png" 
+                    alt="Logo" 
+                    className="h-[90px] w-auto object-contain" 
+                  />
                 </div>
                 <button
                   onClick={() => setOpen(false)}
@@ -74,26 +79,17 @@ export default function Navbar() {
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
-                  className="hover:text-brand transition-colors"
+                  className="hover:text-brand transition-colors cursor-pointer"
                 >
                   Home
                 </Link>
-                
-              <Link
-  href="#contact"
-  onClick={(e) => {
-    e.preventDefault(); // Prevent default jump
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-    setOpen(false); // Close mobile menu
-  }}
-  className="hover:text-brand transition-colors"
->
-  Contact
-</Link>
-
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="hover:text-brand transition-colors cursor-pointer"
+                >
+                  Contact
+                </Link>
               </div>
             </motion.div>
           </>

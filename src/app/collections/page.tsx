@@ -1,15 +1,15 @@
 import React from 'react'
 
-export default function AjarPayCollectionsSection() {
+export default function CollectionsSection() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-12 font-mulish">
+    <section className="w-full max-w-7xl mx-auto px-4 py-12 font-mulish" id="collections">
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
         {/* Left column - image (33% on md+) */}
         <div className="w-full md:w-1/3 flex-shrink-0">
           <div className="relative w-full h-[420px] md:h-[540px] overflow-hidden">
             {/* Using next/image for optimized loading in Next.js */}
             <img
-              src="https://ajarpay.com.pk/wp-content/uploads/2023/10/mobile1-ADPM2QY.png"
+              src="./collection.png"
               alt="ajarPay mobile"
               style={{ objectFit: 'cover' }}
               sizes="(max-width: 768px) 100vw, 33vw"

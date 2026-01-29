@@ -1,8 +1,8 @@
 import { Check } from "lucide-react";
 
-export default function purpose_technologiesProducts() {
+export default function Products() {
   return (
-    <section className="relative pb-12 font-mulish mt-[20px] lg:mt-[-66px]">
+    <section className="relative pb-12 font-mulish mt-[20px] lg:mt-[-66px]" id="products">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
 
         {/* First Column */}
@@ -36,7 +36,6 @@ export default function purpose_technologiesProducts() {
         <div className="bg-white rounded-[20px] shadow p-6 space-y-6 w-full">
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
 
-            {/* Icon List - Left on lg */}
             <ul className="space-y-4 lg:w-1/2 order-2 lg:order-1">
               <li className="flex items-center">
                 <span className="text-[#38A2DF] mr-3">

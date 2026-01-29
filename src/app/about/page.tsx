@@ -2,13 +2,13 @@
 
 export default function AboutCompanySection() {
   return (
-    <section className="w-full bg-white py-10 font-mulish">
+    <section className="w-full bg-white py-10 font-mulish" id="about">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
         {/* Left Column - Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="/about.jpg"
-            alt="About purpose_technologies"
+            src="/about.png"
+            alt="About Purpose Technologies"
             width={2000}
             height={2000}
             className="rounded-lg"
@@ -16,7 +16,7 @@ export default function AboutCompanySection() {
         </div>
 
         {/* Right Column - Content */}
-        <div className="w-full md:w-1/2 space-y-6 pr-5">
+        <div className="w-full md:w-1/2 space-y-6 px-4 pr-5">
           {/* About Company */}
           <div className="flex items-center gap-2">
             <span className="w-4 h-4 md:w-5 md:h-5">

@@ -1,6 +1,6 @@
 // app/components/CoreValues.tsx
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 interface CoreValue {
@@ -10,7 +10,7 @@ interface CoreValue {
   special?: boolean; // for the "More Services" CTA
 }
 
-const coreValues: CoreValue[] = [
+const initialCoreValues: CoreValue[] = [
   {
     title: "Excellence",
     description:
@@ -30,7 +30,7 @@ const coreValues: CoreValue[] = [
   {
     title: "Customer Focus",
     description:
-      "Understanding our merchants’ and customers’ needs is central to everything we do. Our solutions are designed to simplify payments and enhance satisfaction.",
+      "Understanding our merchants' and customers' needs is central to everything we do. Our solutions are designed to simplify payments and enhance satisfaction.",
     icon: (
       <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
     ),
@@ -57,20 +57,52 @@ const coreValues: CoreValue[] = [
   },
 ];
 
+const additionalCoreValues: CoreValue[] = [
+  {
+    title: "Innovation",
+    description:
+      "We constantly explore new technologies and approaches to stay ahead in the payment industry, delivering cutting-edge solutions to our partners.",
+    icon: (
+      <path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0c1.36-1.35 2.04-3.16 2.04-4.95h2c0 1.98-.78 3.95-2.34 5.51-3.12 3.12-8.19 3.12-11.31 0-3.12-3.12-3.12-8.19 0-11.31 3.12-3.12 8.19-3.12 11.31 0l3.08-3.07V2.12h6v8z" />
+    ),
+  },
+  {
+    title: "Collaboration",
+    description:
+      "We believe in working together across teams and with our partners to achieve shared success and create greater value for everyone involved.",
+    icon: (
+      <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+    ),
+  },
+  {
+    title: "Transparency",
+    description:
+      "We maintain open and honest communication with all stakeholders, ensuring clarity in our operations, pricing, and decision-making processes.",
+    icon: (
+      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+    ),
+  },
+  {
+    title: "Sustainability",
+    description:
+      "We are committed to building long-term value while considering the environmental and social impact of our business practices.",
+    icon: (
+      <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2zM12 5.83L15.93 15.5l-3.93-1.88L8.07 15.5 12 5.83z" />
+    ),
+  },
+];
 
-function CoreValueCard({ title, description, icon, special }: CoreValue) {
+function CoreValueCard({ title, description, icon, special, onClick }: CoreValue & { onClick?: () => void }) {
   if (special) {
     return (
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="p-8 rounded-2xl shadow-lg flex flex-col justify-center bg-[#38A2DF] items-center text-center"
+        className="p-8 rounded-2xl shadow-lg flex flex-col justify-center bg-[#38A2DF] items-center text-center cursor-pointer"
+        onClick={onClick}
       >
-        <a
-          href="#"
-          className="inline-block font-mulish px-6 py-3 md:px-[20px] md:py-[14px] text-gray-900 rounded-[50px] text-xs md:text-[14px] font-semibold md:font-bold shadow hover:scale-95 transition-transform bg-[#fff] w-[55%] border"
-        >
+        <button className="inline-block font-mulish px-6 py-3 md:px-[20px] md:py-[14px] text-gray-900 rounded-[50px] text-xs md:text-[14px] font-semibold md:font-bold shadow hover:scale-95 transition-transform bg-[#fff] w-[55%] border">
           More Services
-        </a>
+        </button>
       </motion.div>
     );
   }
@@ -92,6 +124,18 @@ function CoreValueCard({ title, description, icon, special }: CoreValue) {
 }
 
 export default function CoreValues() {
+  const [showAllValues, setShowAllValues] = useState(false);
+  const [displayedValues, setDisplayedValues] = useState(initialCoreValues);
+
+  const handleMoreServicesClick = () => {
+    setShowAllValues(true);
+    // Remove the "More Services" card and add the additional cards
+    setDisplayedValues([
+      ...initialCoreValues.filter(value => !value.special),
+      ...additionalCoreValues
+    ]);
+  };
+
   return (
     <section className="relative w-full py-20 font-mulish">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -119,13 +163,17 @@ export default function CoreValues() {
         </h2>
         <div className="flex justify-center">
           <p className="text-lg text-gray-700 mb-16 w-full lg:w-[45%]">
-            “At Purpose Technologies, our foundation is built on excellence, integrity, and a customer-first approach. We cultivate a culture of meritocracy, celebrate achievement, and champion innovation to deliver cutting-edge payment solutions that empower merchants and society alike.”
+            "At Purpose Technologies, our foundation is built on excellence, integrity, and a customer-first approach. We cultivate a culture of meritocracy, celebrate achievement, and champion innovation to deliver cutting-edge payment solutions that empower merchants and society alike."
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {coreValues.map((value, i) => (
-            <CoreValueCard key={i} {...value} />
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-10 ${showAllValues ? 'md:grid-cols-3' : ''}`}>
+          {displayedValues.map((value, i) => (
+            <CoreValueCard 
+              key={i} 
+              {...value} 
+              onClick={value.special ? handleMoreServicesClick : undefined}
+            />
           ))}
         </div>
       </div>

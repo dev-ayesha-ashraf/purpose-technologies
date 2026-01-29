@@ -1,8 +1,21 @@
+"use client";
+
 import Navbar from "./Navbar";
 
-export default function purpose_technologiesSection() {
+export default function PurposeHome() {
+  // Function to handle smooth scrolling
+  const handleScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
-    <section className="px-8 relative flex flex-col items-center justify-center pb-20 [background:linear-gradient(270deg,#253885D4_40%,#FAF8FFCC_40%)]">
+    <section className="px-8 relative flex flex-col items-center justify-center pb-20 bg-[#FAF8FFCC] md:[background:linear-gradient(270deg,#253885D4_40%,#FAF8FFCC_40%)]">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
       <Navbar />
@@ -38,31 +51,31 @@ export default function purpose_technologiesSection() {
           </h1>
 
           {/* Paragraph */}
-          <p className="text-gray-600 md:text-gray-700 font-mulish text-base md:text-[18px] font-light md:font-normal">
+          <p className="text-gray-700 font-mulish text-[18px] font-normal">
             <strong>Purpose Technologies </strong>is a leading payment facilitation platform designed to connect global and local businesses with their customers seamlessly. Our secure and efficient One-Click checkout system simplifies the purchasing experience, integrating a wide range of essential payment options for maximum convenience.
           </p>
 
           {/* Buttons */}
           <div className="flex space-x-4">
-            <a
-              href="#"
+            <button
+              onClick={() => handleScrollToSection("about")}
               className="inline-block font-mulish px-6 py-3 md:px-[35px] md:py-[17px] text-white rounded-[50px] text-xs md:text-[14px] font-semibold md:font-bold shadow hover:scale-95 transition-transform bg-[linear-gradient(340deg,_#253885_0%,_rgba(37,56,133,0.75)_100%)]"
             >
-              Get Started
-            </a>
-            <a
-              href="#"
+              About Us
+            </button>
+            <button
+              onClick={() => handleScrollToSection("contact")}
               className="inline-block font-mulish px-6 py-3 md:px-[35px] md:py-[17px] text-[#38A2DF] rounded-[50px] text-xs md:text-[14px] font-semibold md:font-bold shadow hover:scale-95 transition-transform bg-[#fff]"
             >
-              Learn More
-            </a>
+              Contact Us
+            </button>
           </div>
         </div>
 
         {/* Right Column */}
         <div className="hidden md:flex justify-center relative">
           <img
-            src="https://ajarpay.com.pk/wp-content/uploads/2023/11/1267779-removebg-preview.png"
+            src="./secure-transaction.png"
             alt="purpose_technologies illustration"
             className="w-[500px] h-auto"
           />
