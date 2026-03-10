@@ -289,10 +289,10 @@ const privacySections: PolicySection[] = [
               <span className="font-semibold mr-2">Email:</span>
               <span>contact@purposetechnologies.com – Send your withdrawal request via email for prompt processing.</span>
             </li>
-            {/* <li className="flex items-start">
-              <span className="font-semibold mr-2">Postal Address:</span>
-              <span>Building # 15 C, 2nd Floor Seeds, 5th Commercial Lane, Zamzama, DHA Phase V, Karachi. Karachi, Sindh 755000 – For those who prefer or require a documented request.</span>
-            </li> */}
+            <li className="flex items-start">
+              <span className="font-semibold mr-2">Address:</span>
+              <span>Seeds Coworking, 1st Floor, Nelson Chambers, I.I. Chundrigar Road, Karachi.</span>
+            </li>
           </ul>
         </div>
         <div className="bg-blue-50 p-3 rounded text-md mt-3">

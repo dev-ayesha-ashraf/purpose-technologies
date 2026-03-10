@@ -3,7 +3,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 
 const Contact = () => {
@@ -73,6 +73,16 @@ const Contact = () => {
               >
                 contact@purposetechnologies.com
               </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 p-5 bg-white/70 backdrop-blur-lg rounded-2xl shadow hover:shadow-lg transition">
+            <MapPin className="w-6 h-6 text-[#38a2df]" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">Our Address</h3>
+              <p className="text-sm text-gray-600">
+                Seeds Coworking, 1st Floor, Nelson Chambers, I.I. Chundrigar Road, Karachi.
+              </p>
             </div>
           </div>
         </motion.div>
