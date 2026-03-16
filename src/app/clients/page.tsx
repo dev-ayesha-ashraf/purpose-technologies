@@ -9,9 +9,9 @@ const Clients = () => {
 
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center">
-                <ClientLogo href="https://odeonpay.com/" src="/client-one.webp" alt="OdeonPay" width={600} height={276} />
-                <ClientLogo href="https://quantumlode.com/" src="/client-two.jpg" alt="Quantum Lode" width={600} height={275} />
-                <ClientLogo href="https://momme.pk/" src="/client-three.jpg" alt="Momme" width={600} height={275} />
+                <ClientLogo href="https://www.mochishoes.com/" src="/client-one.webp" alt="Moni Shoes" width={600} height={276} />
+                <ClientLogo href="https://www.facebook.com/MoneezaLuggage/" src="/client-two.jpg" alt="⁠Moneeza Luggage" width={600} height={275} />
+                <ClientLogo href="https://www.instagram.com/chicoobabyworldofficial/?hl=en" src="/client-three.jpg" alt="⁠Chicoo Baby World" width={600} height={275} />
                
             </div>
         </section>
