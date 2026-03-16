@@ -12,28 +12,41 @@ export default function Navbar() {
     <nav className="w-[95%] h-[80px] mx-auto my-6 bg-white rounded-[20px] flex items-center justify-between px-8 relative z-50 shadow-lg">
       {/* Desktop Logo */}
       <div className="cursor-pointer">
-        <img 
-          src="pt_logo.png" 
-          alt="Logo" 
-          className="h-[60px] w-auto object-contain" 
+        <img
+          src="pt_logo.png"
+          alt="Logo"
+          className="h-[60px] w-auto object-contain"
         />
       </div>
-      
+
       <ul className="hidden md:flex flex-1 justify-center space-x-10 text-lg font-medium text-brand-dark">
         <li>
-          <Link href="/" className="text-[#38a2df] hover:text-brand transition-colors cursor-pointer">
+          <Link href="/" className="text-black hover:text-[#38a2df] transition-colors cursor-pointer">
             Home
           </Link>
         </li>
         <li>
-          <a href="/contact">
-            <button className="hover:text-brand transition-colors cursor-pointer">
-              Contact
-            </button>
-          </a>
+          <Link href="/Products" className="text-black hover:text-[#38a2df] transition-colors cursor-pointer">
+            Products
+          </Link>
+        </li>
+        <li>
+          <Link href="/about" className="text-black hover:text-[#38a2df] transition-colors cursor-pointer">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="/clients" className="text-black hover:text-[#38a2df] transition-colors cursor-pointer">
+            Clients
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact" className="text-black hover:text-[#38a2df] transition-colors cursor-pointer">
+            Contact
+          </Link>
         </li>
       </ul>
-      
+
       <button
         onClick={() => setOpen(true)}
         className="md:hidden p-2 rounded-lg text-[#38a2df] hover:bg-brand-light transition cursor-pointer"
@@ -62,10 +75,10 @@ export default function Navbar() {
               <div className="flex items-center justify-between mb-12">
                 {/* Mobile Logo */}
                 <div className="cursor-pointer">
-                  <img 
-                    src="pt_logo.png" 
-                    alt="Logo" 
-                    className="h-[90px] w-auto object-contain" 
+                  <img
+                    src="pt_logo.png"
+                    alt="Logo"
+                    className="h-[90px] w-auto object-contain"
                   />
                 </div>
                 <button
@@ -79,14 +92,35 @@ export default function Navbar() {
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
-                  className="hover:text-brand transition-colors cursor-pointer"
+                  className="text-white hover:text-[#38a2df] transition-colors cursor-pointer"
                 >
                   Home
                 </Link>
                 <Link
+                  href="/Products"
+                  onClick={() => setOpen(false)}
+                  className="text-white hover:text-[#38a2df] transition-colors cursor-pointer"
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/about"
+                  onClick={() => setOpen(false)}
+                  className="text-white hover:text-[#38a2df] transition-colors cursor-pointer"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/clients"
+                  onClick={() => setOpen(false)}
+                  className="text-white hover:text-[#38a2df] transition-colors cursor-pointer"
+                >
+                  Clients
+                </Link>
+                <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="hover:text-brand transition-colors cursor-pointer"
+                  className="text-white hover:text-[#38a2df] transition-colors cursor-pointer"
                 >
                   Contact
                 </Link>
