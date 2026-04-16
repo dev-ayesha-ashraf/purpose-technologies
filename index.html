@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purpose Technologies – Digital Solutions Built to Last</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@300,400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e0f14;--ink2:#1a1b23;--ink3:#252630;
+  --brand:#007dbf;--brand-l:#3fa8a0;--brand-p:rgba(0,125,191,.10);--brand-b:rgba(0,125,191,.25);
+  --cream:#f8f7f4;--white:#ffffff;
+  --gray:#6b7280;--gray-l:#9ca3af;
+  --border:#e5e4df;--border-d:rgba(255,255,255,.08);
+  --green:#059669;
+  --green-brand:#98c11a;--green-brand-l:#aad120;--green-brand-p:rgba(152,193,26,.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Satoshi',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+a{text-decoration:none;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:500;transition:all .3s;padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;}
+nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:64px;box-shadow:0 1px 20px rgba(0,0,0,.06);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#007dbf,#98c11a);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:18px;height:18px;}
+.logo-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em;}
+.logo-name span{background:linear-gradient(135deg,#007dbf,#98c11a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+nav ul{list-style:none;display:flex;gap:36px;align-items:center;}
+nav ul a{font-size:.88rem;font-weight:500;color:var(--gray);transition:color .2s;}
+nav ul a:hover{color:#007dbf;}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.btn-outline-n{border:1.5px solid var(--border);color:var(--ink);padding:8px 20px;border-radius:7px;font-size:.86rem;font-weight:500;transition:all .2s;}
+.btn-outline-n:hover{border-color:#007dbf;color:#007dbf;}
+.btn-solid-n{background:linear-gradient(135deg,#007dbf,#98c11a);color:white;padding:9px 22px;border-radius:7px;font-size:.86rem;font-weight:600;transition:all .2s;}
+.btn-solid-n:hover{opacity:.9;box-shadow:0 6px 20px rgba(0,125,191,.3);}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;overflow:hidden;background:var(--ink);display:flex;align-items:center;padding:120px 6% 80px;}
+#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.35;}
+.hero-noise{position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none;}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
+.hc-dot{width:7px;height:7px;border-radius:50%;background:#98c11a;box-shadow:0 0 8px #98c11a;animation:glow 2s ease-in-out infinite;}
+@keyframes glow{0%,100%{opacity:1;}50%{opacity:.4;}}
+.hc-text{font-size:.76rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+.hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(3.2rem,5.5vw,6.2rem);color:white;line-height:1.04;letter-spacing:-.03em;margin-bottom:24px;font-weight:700;}
+.hero h1 .accent{color:#98c11a;}
+.hero h1 .thin{color:rgba(255,255,255,.35);font-weight:600;}
+.hero-desc{font-size:1.05rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:44px;font-weight:300;max-width:460px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
+.btn-primary{background:linear-gradient(135deg,#007dbf,#3fa8a0);color:white;padding:13px 28px;border-radius:8px;font-size:.92rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .25s;}
+.btn-primary:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,125,191,.4);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:13px 28px;border-radius:8px;font-size:.92rem;font-weight:500;transition:all .25s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:white;}
+.hero-stats{display:flex;gap:44px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08);}
+.hs-val{font-family:'Clash Display',sans-serif;font-size:2.4rem;color:white;letter-spacing:-.03em;}
+.hs-label{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:4px;}
+.hero-cards{position:relative;height:460px;}
+.hcard{position:absolute;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;backdrop-filter:blur(12px);transition:transform .3s;}
+.hcard:hover{transform:translateY(-4px);}
+.hcard-1{top:0;left:0;right:60px;}
+.hcard-2{top:145px;right:0;left:60px;}
+.hcard-3{bottom:0;left:0;right:80px;}
+.hcard-icon{font-size:1.6rem;margin-bottom:10px;}
+.hcard-title{font-weight:600;color:white;font-size:.9rem;margin-bottom:5px;}
+.hcard-sub{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;}
+.hcard-badge{display:inline-block;background:var(--brand-p);border:1px solid var(--brand-b);color:var(--brand-l);padding:3px 10px;border-radius:4px;font-size:.68rem;font-weight:600;margin-top:10px;}
+
+/* TICKER */
+.ticker{background:linear-gradient(90deg,#007dbf,#3fa8a0 50%,#98c11a);padding:14px 0;overflow:hidden;}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:ticker 32s linear infinite;}
+@keyframes ticker{to{transform:translateX(-50%);}}
+.ti{padding:0 36px;font-size:.8rem;color:rgba(255,255,255,.65);font-weight:500;display:inline-flex;align-items:center;gap:8px;}
+.ti-sep{color:rgba(255,255,255,.3);}
+
+/* SECTIONS */
+.section{padding:96px 6%;}
+.si{max-width:1200px;margin:0 auto;}
+.s-label{font-size:.72rem;font-weight:700;color:#007dbf;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:block;}
+.s-title{font-family:'Clash Display',sans-serif;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.02em;line-height:1.1;font-weight:700;}
+.s-title em{font-style:italic;color:var(--brand);}
+.s-sub{font-size:.98rem;color:var(--gray);line-height:1.8;max-width:520px;margin-top:14px;font-weight:300;}
+.s-center{text-align:center;margin-bottom:60px;}
+.s-center .s-sub{margin-left:auto;margin-right:auto;}
+
+/* SERVICES */
+.services-bg{background:var(--cream);}
+.services-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.sc{background:white;border-radius:14px;padding:32px 28px;border:1.5px solid var(--border);transition:all .3s;position:relative;overflow:hidden;}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#007dbf,#98c11a);transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.sc:hover{border-color:var(--brand-b);transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,125,191,.1);}
+.sc:hover::after{transform:scaleX(1);}
+.sc-icon{width:48px;height:48px;border-radius:12px;background:var(--brand-p);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px;}
+.sc-title{font-family:'Clash Display',sans-serif;font-size:1.1rem;color:var(--ink);margin-bottom:10px;font-weight:600;}
+.sc-desc{font-size:.84rem;color:var(--gray);line-height:1.75;margin-bottom:16px;}
+.sc-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tag{background:var(--cream);border:1px solid var(--border);color:var(--gray);padding:3px 10px;border-radius:4px;font-size:.7rem;font-weight:500;}
+
+/* PRICING */
+.pricing-tabs{display:flex;gap:6px;background:var(--cream);border-radius:10px;padding:5px;margin-bottom:48px;width:fit-content;}
+.pt{padding:9px 22px;border-radius:7px;font-size:.86rem;font-weight:600;color:var(--gray);cursor:pointer;transition:all .25s;border:none;background:transparent;font-family:'Satoshi',sans-serif;}
+.pt.active{background:white;color:var(--brand);box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.pricing-panel{display:none;}
+.pricing-panel.active{display:block;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.pc{background:white;border-radius:16px;padding:32px 28px;border:1.5px solid var(--border);position:relative;transition:all .3s;}
+.pc:hover{border-color:var(--brand-b);box-shadow:0 18px 44px rgba(0,125,191,.08);}
+.pc.featured{background:var(--brand);border-color:var(--brand);transform:scale(1.03);box-shadow:0 24px 60px rgba(0,125,191,.35);}
+.pc.featured:hover{transform:scale(1.05);}
+.pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#f59e0b;color:white;padding:4px 14px;border-radius:100px;font-size:.7rem;font-weight:700;white-space:nowrap;}
+.pc-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.pc-name.light{color:rgba(255,255,255,.85);}
+.pc-desc{font-size:.82rem;color:var(--gray);margin-bottom:20px;line-height:1.6;}
+.pc-desc.light{color:rgba(255,255,255,.55);}
+.pc-price{margin-bottom:24px;}
+.price-from{font-size:.72rem;color:var(--gray-l);display:block;margin-bottom:4px;}
+.price-from.light{color:rgba(255,255,255,.45);}
+.price-amount{font-family:'Clash Display',sans-serif;font-size:2.4rem;color:var(--ink);letter-spacing:-.02em;}
+.price-amount.light{color:white;}
+.price-unit{font-size:.78rem;color:var(--gray);}
+.price-unit.light{color:rgba(255,255,255,.45);}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.pc-features li{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--ink);}
+.pc-features li.light{color:rgba(255,255,255,.85);}
+.pf-check{width:18px;height:18px;border-radius:50%;background:var(--brand-p);border:1.5px solid var(--brand-b);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pf-check.light{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);}
+.pf-check svg{width:10px;height:10px;stroke:var(--brand);stroke-width:2.5;}
+.pf-check.light svg{stroke:white;}
+.pc-cta{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .2s;}
+.pc-cta.outline{border:1.5px solid var(--border);color:var(--brand);}
+.pc-cta.outline:hover{border-color:var(--brand);background:var(--brand-p);}
+.pc-cta.white{background:white;color:var(--brand);}
+.pc-cta.white:hover{box-shadow:0 6px 20px rgba(0,0,0,.15);}
+.pricing-note{text-align:center;margin-top:28px;font-size:.82rem;color:var(--gray);}
+
+/* SETTLIX */
+.settlix-section{background:var(--ink);padding:96px 6%;}
+.settlix-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:64px;}
+.settlix-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-brand-p);border:1px solid rgba(152,193,26,.3);padding:6px 16px;border-radius:100px;margin-bottom:16px;}
+.sb-label{font-size:.72rem;color:var(--green-brand-l);font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.settlix-title{font-family:'Clash Display',sans-serif;font-size:clamp(2.5rem,4.5vw,5rem);color:white;line-height:1.05;letter-spacing:-.03em;font-weight:700;}
+.settlix-title .teal{color:var(--green-brand-l);}
+.settlix-desc{font-size:1rem;color:rgba(255,255,255,.45);line-height:1.8;margin-top:16px;font-weight:300;}
+.settlix-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.btn-teal{background:linear-gradient(135deg,#3fa8a0,#98c11a);color:white;padding:12px 26px;border-radius:8px;font-size:.9rem;font-weight:700;transition:all .2s;}
+.btn-teal:hover{opacity:.9;transform:translateY(-2px);}
+.btn-ghost-dark{border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:12px 26px;border-radius:8px;font-size:.9rem;font-weight:500;transition:all .2s;}
+.btn-ghost-dark:hover{border-color:rgba(255,255,255,.4);color:white;}
+.settlix-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ss{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:22px;}
+.ss-val{font-family:'Clash Display',sans-serif;font-size:2rem;color:var(--green-brand-l);letter-spacing:-.02em;}
+.ss-label{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:6px;}
+.settlix-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:56px;}
+.sp{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:32px 28px;transition:all .3s;position:relative;overflow:hidden;}
+.sp::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#007dbf,#98c11a);transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.sp:hover{background:rgba(255,255,255,.07);border-color:rgba(152,193,26,.3);}
+.sp:hover::before{transform:scaleX(1);}
+.sp-icon{font-size:2rem;margin-bottom:18px;}
+.sp-name{font-family:'Clash Display',sans-serif;font-size:1.3rem;color:white;margin-bottom:12px;}
+.sp-desc{font-size:.86rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:20px;}
+.sp-features{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.sp-features li{display:flex;align-items:center;gap:9px;font-size:.82rem;color:rgba(255,255,255,.6);}
+.sp-features li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green-brand-l);flex-shrink:0;}
+.settlix-features-head{font-size:.72rem;color:rgba(255,255,255,.3);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;}
+.settlix-features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.sf{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:20px 18px;transition:border-color .3s;}
+.sf:hover{border-color:rgba(152,193,26,.3);}
+.sf-icon{font-size:1.4rem;margin-bottom:10px;}
+.sf-title{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:5px;}
+.sf-desc{font-size:.76rem;color:rgba(255,255,255,.35);line-height:1.65;}
+
+/* CLIENTS */
+.clients-bg{background:var(--cream);}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cl{background:white;border-radius:14px;border:1.5px solid var(--border);padding:28px 24px;display:flex;flex-direction:column;transition:all .3s;}
+.cl:hover{border-color:var(--brand-b);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,125,191,.08);}
+.cl-logo{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;}
+.cl-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;color:var(--ink);margin-bottom:4px;font-weight:700;}
+.cl-industry{font-size:.74rem;color:var(--brand);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
+.cl-quote{font-size:.86rem;color:var(--gray);line-height:1.75;font-style:italic;margin-bottom:16px;flex:1;}
+.cl-quote::before{content:'\201C';}
+.cl-quote::after{content:'\201D';}
+.cl-person{font-size:.8rem;font-weight:600;color:var(--ink);}
+.cl-services{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;border-top:1px solid var(--border);padding-top:14px;}
+.cs-tag{background:var(--brand-p);border:1px solid var(--brand-b);color:var(--brand);padding:3px 10px;border-radius:4px;font-size:.7rem;font-weight:600;}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.why-points{display:flex;flex-direction:column;gap:24px;margin-top:36px;}
+.wp{display:flex;gap:16px;align-items:flex-start;}
+.wp-num{width:40px;height:40px;border-radius:10px;background:var(--brand-p);border:1.5px solid var(--brand-b);display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-size:1rem;color:var(--brand);flex-shrink:0;}
+.wp-title{font-weight:600;color:var(--ink);margin-bottom:5px;font-size:.96rem;}
+.wp-desc{font-size:.84rem;color:var(--gray);line-height:1.7;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.sg{background:white;border-radius:14px;border:1.5px solid var(--border);padding:28px 24px;transition:all .3s;}
+.sg:hover{border-color:var(--brand-b);box-shadow:0 10px 30px rgba(0,125,191,.07);}
+.sg-val{font-family:'Clash Display',sans-serif;font-size:2.8rem;background:linear-gradient(135deg,#007dbf,#98c11a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.03em;}
+.sg-label{font-size:.82rem;color:var(--gray);margin-top:6px;line-height:1.5;}
+
+/* FAQ */
+.faq-bg{background:var(--cream);}
+.faq-list{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--ink);font-size:.98rem;user-select:none;gap:16px;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--brand-p);border:1.5px solid var(--brand-b);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s;}
+.faq-icon svg{width:12px;height:12px;stroke:var(--brand);stroke-width:2.5;transition:transform .3s;}
+.faq-q.open .faq-icon{background:var(--brand);}
+.faq-q.open .faq-icon svg{stroke:white;transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s;}
+.faq-a.open{max-height:400px;padding-bottom:22px;}
+.faq-a p{font-size:.9rem;color:var(--gray);line-height:1.8;}
+
+/* CTA / CONTACT */
+.cta-section{background:linear-gradient(135deg,#007dbf 0%,#3fa8a0 50%,#5ea830 100%);padding:96px 6%;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;top:-50%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 65%);pointer-events:none;}
+.cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+.cta-title{font-family:'Clash Display',sans-serif;font-size:clamp(2.2rem,4.5vw,4.5rem);color:white;line-height:1.08;letter-spacing:-.03em;}
+.cta-title em{font-style:italic;opacity:.7;}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-input{padding:12px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:white;font-family:'Satoshi',sans-serif;font-size:.9rem;transition:border-color .2s;outline:none;}
+.form-input::placeholder{color:rgba(255,255,255,.4);}
+.form-input:focus{border-color:rgba(255,255,255,.6);}
+.form-select{appearance:none;cursor:pointer;}
+.form-textarea{resize:vertical;min-height:90px;}
+.form-submit{background:white;color:var(--brand);padding:13px;border-radius:8px;font-family:'Satoshi',sans-serif;font-size:.92rem;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.form-submit:hover{box-shadow:0 8px 24px rgba(0,0,0,.2);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:#08090e;padding:72px 6% 28px;}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);}
+.ft-brand-name{font-family:'Clash Display',sans-serif;font-size:1.2rem;color:white;margin-bottom:12px;}
+.ft-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.8;}
+.ft-email{color:var(--brand-l);font-size:.84rem;margin-top:14px;display:block;}
+.fc-h{font-size:.7rem;color:rgba(255,255,255,.3);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;}
+.fc-ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.fc-ul a{color:rgba(255,255,255,.4);font-size:.86rem;transition:color .2s;}
+.fc-ul a:hover{color:white;}
+.footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.18);}
+.settlix-footer-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-brand-p);border:1px solid rgba(152,193,26,.3);padding:4px 12px;border-radius:4px;font-size:.72rem;color:var(--green-brand-l);}
+
+@media(max-width:1024px){
+  .services-grid,.settlix-pillars{grid-template-columns:1fr 1fr;}
+  .settlix-features{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .hero-inner,.services-top,.settlix-header,.why-grid,.cta-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-cards{display:none;}
+  .services-grid,.pricing-grid,.clients-grid,.stats-grid,.settlix-pillars,.settlix-features,.settlix-stats{grid-template-columns:1fr;}
+  .pricing-tabs{overflow-x:auto;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  nav ul,.nav-actions{display:none;}
+  .pc.featured{transform:none;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-mark" style="background:white;border-radius:8px;overflow:hidden;padding:2px;">
+      <img src="data:image/jpeg;base64,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" alt="Purpose Technologies" style="width:30px;height:30px;object-fit:contain;display:block;">
+    </div>
+    <span class="logo-name">Purpose<span>Tech</span></span>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#settlix">Settlix</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#faq" class="btn-outline-n">Learn More</a>
+    <a href="#contact" class="btn-solid-n">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-noise"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-chip"><div class="hc-dot"></div><span class="hc-text">Digital Solutions Provider — Pakistan</span></div>
+      <h1>Build Digital.<br><span style="color:#98c11a;">Scale</span> Further.<br><span class="thin">Deliver Always.</span></h1>
+      <p class="hero-desc">Purpose Technologies designs, builds, and supports the digital infrastructure that growing businesses depend on — from bespoke web and app development to CRM systems, customer support, and our payments product Settlix.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary">Explore Services →</a>
+        <a href="#settlix" class="btn-ghost">Discover Settlix</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-val">120+</div><div class="hs-label">Projects Delivered</div></div>
+        <div><div class="hs-val">40+</div><div class="hs-label">Active Clients</div></div>
+        <div><div class="hs-val">6yr</div><div class="hs-label">In Business</div></div>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hcard hcard-1">
+        <div class="hcard-icon">🌐</div>
+        <div class="hcard-title">Web & App Development</div>
+        <div class="hcard-sub">Custom web platforms, mobile applications, and API integrations built for performance and growth.</div>
+        <span class="hcard-badge">From PKR 15,000</span>
+      </div>
+      <div class="hcard hcard-2">
+        <div class="hcard-icon">💳</div>
+        <div class="hcard-title">Settlix Payments Platform</div>
+        <div class="hcard-sub">Payments and disbursements under one unified API — built and operated by Purpose Technologies.</div>
+        <span class="hcard-badge">Live Product</span>
+      </div>
+      <div class="hcard hcard-3">
+        <div class="hcard-icon">🎯</div>
+        <div class="hcard-title">CRM & Customer Support</div>
+        <div class="hcard-sub">Tailored CRM systems and managed customer support operations that convert and retain.</div>
+        <span class="hcard-badge">From PKR 80,000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-track">
+  <span class="ti">Web Development <span class="ti-sep">✦</span></span>
+  <span class="ti">Mobile App Development <span class="ti-sep">✦</span></span>
+  <span class="ti">CRM Design & Integration <span class="ti-sep">✦</span></span>
+  <span class="ti">Customer Support Operations <span class="ti-sep">✦</span></span>
+  <span class="ti">Settlix — Payments & Disbursements <span class="ti-sep">✦</span></span>
+  <span class="ti">UI/UX Design <span class="ti-sep">✦</span></span>
+  <span class="ti">Cloud & DevOps <span class="ti-sep">✦</span></span>
+  <span class="ti">Digital Strategy <span class="ti-sep">✦</span></span>
+  <span class="ti">Web Development <span class="ti-sep">✦</span></span>
+  <span class="ti">Mobile App Development <span class="ti-sep">✦</span></span>
+  <span class="ti">CRM Design & Integration <span class="ti-sep">✦</span></span>
+  <span class="ti">Customer Support Operations <span class="ti-sep">✦</span></span>
+  <span class="ti">Settlix — Payments & Disbursements <span class="ti-sep">✦</span></span>
+  <span class="ti">UI/UX Design <span class="ti-sep">✦</span></span>
+  <span class="ti">Cloud & DevOps <span class="ti-sep">✦</span></span>
+  <span class="ti">Digital Strategy <span class="ti-sep">✦</span></span>
+</div></div>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="si">
+    <div class="services-top">
+      <div>
+        <span class="s-label">What We Do</span>
+        <h2 class="s-title">Full-service digital<br>for every <em>stage</em></h2>
+      </div>
+      <p class="s-sub">From your first website to enterprise-grade infrastructure — Purpose Technologies delivers across the full digital stack. Every service is in-house, every team is local, and every delivery is accountable.</p>
+    </div>
+    <div class="services-grid">
+      <div class="sc"><div class="sc-icon">🌐</div><div class="sc-title">Web Development</div><div class="sc-desc">Custom websites and web applications built for performance, SEO, and conversion. From corporate landing pages to full-stack e-commerce and SaaS platforms.</div><div class="sc-tags"><span class="tag">React / Next.js</span><span class="tag">Laravel</span><span class="tag">WordPress</span><span class="tag">E-Commerce</span></div></div>
+      <div class="sc"><div class="sc-icon">📱</div><div class="sc-title">Mobile App Development</div><div class="sc-desc">Native iOS and Android apps, cross-platform React Native, and Flutter applications — with clean UX, fast performance, and full API integration.</div><div class="sc-tags"><span class="tag">iOS & Android</span><span class="tag">React Native</span><span class="tag">Flutter</span></div></div>
+      <div class="sc"><div class="sc-icon">🎯</div><div class="sc-title">CRM Design & Integration</div><div class="sc-desc">Custom CRM systems designed around your sales workflows — or expert configuration of Salesforce, HubSpot, and Zoho for existing teams.</div><div class="sc-tags"><span class="tag">Custom CRM</span><span class="tag">Salesforce</span><span class="tag">HubSpot</span><span class="tag">Zoho</span></div></div>
+      <div class="sc"><div class="sc-icon">🎧</div><div class="sc-title">Customer Support Services</div><div class="sc-desc">Managed support operations — live chat, email, phone, and ticketing. Branded, responsive teams that represent your company like your own employees would.</div><div class="sc-tags"><span class="tag">Live Chat</span><span class="tag">Email Support</span><span class="tag">Ticketing</span><span class="tag">24/7 Available</span></div></div>
+      <div class="sc"><div class="sc-icon">🎨</div><div class="sc-title">UI/UX Design</div><div class="sc-desc">User research, wireframing, prototyping, and production-ready design systems. We design interfaces that convert visitors into customers and delight them into returning.</div><div class="sc-tags"><span class="tag">Figma</span><span class="tag">Design Systems</span><span class="tag">User Research</span></div></div>
+      <div class="sc"><div class="sc-icon">☁️</div><div class="sc-title">Cloud & DevOps</div><div class="sc-desc">Cloud infrastructure, CI/CD pipelines, containerisation, and managed hosting on AWS, GCP, or Azure — so your product is always fast, secure, and live.</div><div class="sc-tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="si">
+    <div class="s-center">
+      <span class="s-label">Transparent Pricing</span>
+      <h2 class="s-title">Clear costs. No <em>surprises.</em></h2>
+      <p class="s-sub">All prices in PKR. These are starting rates — every project is scoped and quoted individually. Contact us for a tailored proposal.</p>
+    </div>
+    <div class="pricing-tabs" role="tablist">
+      <button class="pt active" onclick="showPricing('web',this)">Web Dev</button>
+      <button class="pt" onclick="showPricing('app',this)">Mobile Apps</button>
+      <button class="pt" onclick="showPricing('crm',this)">CRM</button>
+      <button class="pt" onclick="showPricing('support',this)">Support</button>
+    </div>
+
+    <div class="pricing-panel active" id="pricing-web">
+      <div class="pricing-grid">
+        <div class="pc">
+          <div class="pc-name">Starter Website</div>
+          <div class="pc-desc">Professional online presence for small businesses and new brands.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 15,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 8 pages</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Responsive, mobile-first design</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Contact form & WhatsApp integration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Basic SEO setup</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>3 rounds of revisions</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>1 month post-launch support</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get Started →</a>
+        </div>
+        <div class="pc featured">
+          <div class="pc-badge">Most Popular</div>
+          <div class="pc-name light">Business Platform</div>
+          <div class="pc-desc light">Full-featured web platform for growing businesses needing capability and automation.</div>
+          <div class="pc-price"><span class="price-from light">Starting from</span><span class="price-amount light">PKR 1,50,000</span></div>
+          <ul class="pc-features">
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 25 pages</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Custom admin dashboard / CMS</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>E-commerce or booking functionality</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Settlix payment integration</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Advanced SEO + Google Analytics</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>3 months post-launch support</li>
+          </ul>
+          <a href="#contact" class="pc-cta white">Get Started →</a>
+        </div>
+        <div class="pc">
+          <div class="pc-name">Enterprise / SaaS</div>
+          <div class="pc-desc">Complex platforms, SaaS products, marketplaces, and enterprise systems.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 5,00,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Unlimited pages & modules</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Multi-role user management</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>API & third-party integrations</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cloud infrastructure & DevOps</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Full QA & testing suite</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>6 months post-launch SLA</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get a Custom Quote →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-panel" id="pricing-app">
+      <div class="pricing-grid">
+        <div class="pc">
+          <div class="pc-name">MVP App</div>
+          <div class="pc-desc">Launch-ready minimum viable product for validating your app concept.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 1,75,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cross-platform (iOS + Android)</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 8 core screens</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>User authentication</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>REST API integration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>App Store & Play Store submission</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>1 month post-launch support</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get Started →</a>
+        </div>
+        <div class="pc featured">
+          <div class="pc-badge">Most Popular</div>
+          <div class="pc-name light">Full-Feature App</div>
+          <div class="pc-desc light">Feature-complete mobile application with advanced functionality and polished UX.</div>
+          <div class="pc-price"><span class="price-from light">Starting from</span><span class="price-amount light">PKR 4,50,000</span></div>
+          <ul class="pc-features">
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>iOS + Android (native or RN)</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Unlimited screens & flows</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>In-app payments via Settlix</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Push notifications & analytics</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Admin backend panel</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>3 months post-launch support</li>
+          </ul>
+          <a href="#contact" class="pc-cta white">Get Started →</a>
+        </div>
+        <div class="pc">
+          <div class="pc-name">Enterprise App</div>
+          <div class="pc-desc">Complex multi-platform apps with ERP integrations and enterprise security.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 10,00,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Native iOS + Android</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>ERP / CRM integration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Offline mode & sync</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Enterprise SSO & security</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dedicated QA + UAT</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>12-month maintenance SLA</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get a Custom Quote →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-panel" id="pricing-crm">
+      <div class="pricing-grid">
+        <div class="pc">
+          <div class="pc-name">CRM Setup & Config</div>
+          <div class="pc-desc">Configuration and customisation of existing CRM platforms for small sales teams.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 80,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>HubSpot / Zoho / Pipedrive setup</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pipeline & deal stage configuration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Email integration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Data import & cleanup</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Team training (up to 10 users)</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get Started →</a>
+        </div>
+        <div class="pc featured">
+          <div class="pc-badge">Most Popular</div>
+          <div class="pc-name light">Custom CRM Build</div>
+          <div class="pc-desc light">Purpose-built CRM tailored to your sales process, product, and team structure.</div>
+          <div class="pc-price"><span class="price-from light">Starting from</span><span class="price-amount light">PKR 3,50,000</span></div>
+          <ul class="pc-features">
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Fully custom web-based CRM</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Lead, contact & deal management</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Custom reporting & dashboards</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Role-based access control</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Email & WhatsApp automation</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>3 months support included</li>
+          </ul>
+          <a href="#contact" class="pc-cta white">Get Started →</a>
+        </div>
+        <div class="pc">
+          <div class="pc-name">CRM + Integration Suite</div>
+          <div class="pc-desc">Advanced CRM with deep ERP, payments, and third-party integrations for larger teams.</div>
+          <div class="pc-price"><span class="price-from">Starting from</span><span class="price-amount">PKR 8,00,000</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>All Custom CRM features</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>ERP / accounting integration</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Settlix payments inside CRM</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Mobile app companion</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dedicated account manager</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>12-month SLA maintenance</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get a Custom Quote →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-panel" id="pricing-support">
+      <div class="pricing-grid">
+        <div class="pc">
+          <div class="pc-name">Essential Support</div>
+          <div class="pc-desc">Managed email and chat support for growing businesses. Up to 200 tickets/month.</div>
+          <div class="pc-price"><span class="price-from">Per month, starting from</span><span class="price-amount">PKR 45,000</span><span class="price-unit">/mo</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 200 tickets/month</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Email + live chat support</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Business hours (9 AM–6 PM PKT)</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Branded responses in your voice</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Monthly performance report</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Get Started →</a>
+        </div>
+        <div class="pc featured">
+          <div class="pc-badge">Most Popular</div>
+          <div class="pc-name light">Growth Support</div>
+          <div class="pc-desc light">Full-channel support operations for e-commerce, SaaS, and marketplace businesses.</div>
+          <div class="pc-price"><span class="price-from light">Per month, starting from</span><span class="price-amount light">PKR 1,10,000</span><span class="price-unit light">/mo</span></div>
+          <ul class="pc-features">
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 800 tickets/month</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Email, chat & phone support</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Extended hours (8 AM–10 PM PKT)</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>WhatsApp support channel</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dedicated team lead</li>
+            <li class="light"><div class="pf-check light"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Weekly reporting dashboard</li>
+          </ul>
+          <a href="#contact" class="pc-cta white">Get Started →</a>
+        </div>
+        <div class="pc">
+          <div class="pc-name">Enterprise Support</div>
+          <div class="pc-desc">Fully custom support operations with dedicated agents, SLAs, and 24/7 coverage.</div>
+          <div class="pc-price"><span class="price-from">Custom pricing</span><span class="price-amount">Custom</span></div>
+          <ul class="pc-features">
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Unlimited ticket volume</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>24/7 coverage available</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Multilingual teams</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dedicated named agents</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Contractual SLA guarantees</li>
+            <li><div class="pf-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Custom reporting & QA</li>
+          </ul>
+          <a href="#contact" class="pc-cta outline">Talk to Us →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="pricing-note">All prices in PKR. Listed rates are starting points — final pricing is fixed-scope after a scoping call. <a href="#contact" style="color:var(--brand);">Contact us</a> for a tailored proposal.</p>
+  </div>
+</section>
+
+<!-- SETTLIX -->
+<section class="settlix-section" id="settlix">
+  <div class="si">
+    <div class="settlix-header">
+      <div>
+        <div class="settlix-badge"><span class="sb-label">Purpose Technologies — Product</span></div>
+        <div class="settlix-title">Meet<br><span class="teal">Settlix</span></div>
+        <p class="settlix-desc">Settlix is Purpose Technologies' own payments infrastructure — a unified platform handling Payments and Disbursements for businesses of every size. Built in Pakistan, engineered for scale.</p>
+
+      </div>
+      <div class="settlix-stats">
+        <div class="ss"><div class="ss-val">Fast</div><div class="ss-label">Sub-2 second processing</div></div>
+        <div class="ss"><div class="ss-val">99.9%</div><div class="ss-label">Platform uptime</div></div>
+        <div class="ss"><div class="ss-val">48 hrs</div><div class="ss-label">Typical integration time</div></div>
+        <div class="ss"><div class="ss-val">PKR 0</div><div class="ss-label">Transaction Fees to Get Started</div></div>
+      </div>
+    </div>
+
+    <div class="settlix-pillars">
+      <div class="sp">
+        <div class="sp-icon">💳</div>
+        <div class="sp-name">Payments</div>
+        <div class="sp-desc">Accept payments from any channel — online cards, mobile wallets, QR codes, and bank transfers — through a single Settlix integration with real-time reporting.</div>
+        <ul class="sp-features">
+          <li>Visa, Mastercard, UnionPay acceptance</li>
+          <li>JazzCash, EasyPaisa, NayaPay wallets</li>
+          <li>Internet banking — all major Pakistani banks</li>
+          <li>QR code payments for in-store use</li>
+          <li>Hosted checkout or custom API</li>
+          <li>Real-time transaction dashboard</li>
+          <li>T+1 settlement to your bank account</li>
+        </ul>
+      </div>
+      <div class="sp">
+        <div class="sp-icon">📤</div>
+        <div class="sp-name">Disbursements</div>
+        <div class="sp-desc">Send money to multiple recipients simultaneously — salaries, vendor payments, refunds, commissions, and marketplace payouts — from one API call.</div>
+        <ul class="sp-features">
+          <li>Bulk payouts to 1,000+ recipients</li>
+          <li>Direct bank account transfers (IBFT)</li>
+          <li>Wallet disbursements (JazzCash, EasyPaisa)</li>
+          <li>Salary disbursement with payslip generation</li>
+          <li>Refund automation for e-commerce</li>
+          <li>Marketplace seller payouts</li>
+          <li>Full audit trail per disbursement</li>
+        </ul>
+      </div>
+
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section clients-bg" id="clients">
+  <div class="si">
+    <div class="s-center">
+      <span class="s-label">Our Clients</span>
+      <h2 class="s-title">Trusted by <em>growing</em> businesses</h2>
+      <p class="s-sub">From pharmaceutical marketplaces to luxury pet stores and tutoring platforms — our clients represent the ambition and diversity of Pakistan's digital economy.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="cl">
+        <div class="cl-logo" style="background:#e8f4ff;">💊</div>
+        <div class="cl-name">Adviyat Pakistan</div>
+        <div class="cl-industry">Pharmaceutical Marketplace</div>
+        <p class="cl-quote">Purpose Technologies built our entire wholesale pharmaceutical marketplace from the ground up — product catalogue, buyer/seller portal, enquiry system, and Settlix payment integration. The platform handles thousands of transactions monthly with zero downtime.</p>
+        <div class="cl-person">Managing Director · Adviyat Pakistan (Pvt) Ltd</div>
+        <div class="cl-services"><span class="cs-tag">Marketplace Development</span><span class="cs-tag">Settlix Payments</span><span class="cs-tag">CRM Integration</span></div>
+      </div>
+      <div class="cl">
+        <div class="cl-logo" style="background:#f0fdf4;">🐾</div>
+        <div class="cl-name">PetStop</div>
+        <div class="cl-industry">Luxury Pets & Plants Marketplace</div>
+        <p class="cl-quote">The team at Purpose Tech delivered our marketplace with an outstanding product listing experience, a full cart and checkout system powered by Settlix, and a mobile-first design that our customers love. Launching took just 6 weeks.</p>
+        <div class="cl-person">Founder · PetStop (petstop.pk)</div>
+        <div class="cl-services"><span class="cs-tag">Web Development</span><span class="cs-tag">Mobile App</span><span class="cs-tag">Settlix Payments</span></div>
+      </div>
+      <div class="cl">
+        <div class="cl-logo" style="background:#eff6ff;">🎓</div>
+        <div class="cl-name">Alphabet Experts</div>
+        <div class="cl-industry">Home Tutors Marketplace</div>
+        <p class="cl-quote">Purpose Technologies built our tutor discovery platform, booking flow, and payment processing through Settlix — all in one cohesive product. We went from zero to 2,400 registered tutors in our first year of operation.</p>
+        <div class="cl-person">CEO · Alphabet Experts</div>
+        <div class="cl-services"><span class="cs-tag">Platform Development</span><span class="cs-tag">Booking System</span><span class="cs-tag">Customer Support</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <div class="si">
+    <div class="why-grid">
+      <div>
+        <span class="s-label">Why Purpose Technologies</span>
+        <h2 class="s-title">Built different,<br><em>delivered different</em></h2>
+        <div class="why-points">
+          <div class="wp"><div class="wp-num">01</div><div><div class="wp-title">Pakistan-first mindset</div><div class="wp-desc">Every product is optimised for Pakistan's network conditions, payment infrastructure, and user behaviour. We don't port foreign templates — we build for where you operate.</div></div></div>
+          <div class="wp"><div class="wp-num">02</div><div><div class="wp-title">One team, full stack</div><div class="wp-desc">Design, frontend, backend, mobile, DevOps, and QA are all in-house. No subcontracting — direct accountability and faster delivery.</div></div></div>
+          <div class="wp"><div class="wp-num">03</div><div><div class="wp-title">Settlix advantage</div><div class="wp-desc">Clients who build with Purpose Technologies get Settlix at preferential rates. Your product ships with Pakistan's best payments infrastructure built in.</div></div></div>
+          <div class="wp"><div class="wp-num">04</div><div><div class="wp-title">Long-term partnerships</div><div class="wp-desc">We don't do transactional project work. Our model is long-term: retainer support, ongoing development, and shared accountability for results.</div></div></div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="sg"><div class="sg-val">120+</div><div class="sg-label">Projects delivered across web, mobile, CRM, and data</div></div>
+        <div class="sg"><div class="sg-val">98%</div><div class="sg-label">Client retention rate year-over-year</div></div>
+        <div class="sg"><div class="sg-val">6</div><div class="sg-label">Years building digital products in Pakistan</div></div>
+        <div class="sg"><div class="sg-val">48hrs</div><div class="sg-label">Average time to integrate Settlix into a live product</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-bg" id="faq">
+  <div class="si">
+    <div class="s-center">
+      <span class="s-label">FAQ</span>
+      <h2 class="s-title">Questions we <em>get asked</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does a typical web or app project take?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>A Starter Website takes 2–4 weeks. A Business Platform 6–10 weeks. An Enterprise or SaaS project is 12–24 weeks depending on scope. Mobile app timelines are similar. We provide detailed project timelines during the scoping call before any commitment is made.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use Settlix without building my project with Purpose Technologies?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>Yes. Settlix is available as a standalone product with its own API and documentation. Any developer can integrate Settlix into any existing platform. Clients who also use our development services receive Settlix at preferential commercial rates.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is included in post-launch support?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>Post-launch support covers bug fixes, minor content updates, performance monitoring, and technical assistance. The scope and duration depends on your package. For ongoing feature development, we offer monthly retainer arrangements that suit most growing businesses.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are the prices on your pricing page fixed?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>The prices shown are starting rates for the described scope. Every project is scoped and quoted individually after a short discovery call. We provide a detailed, fixed-price proposal — no hourly billing, no surprise invoices.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you work with clients outside Pakistan?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>Yes. We work with clients in the UAE, UK, Saudi Arabia, and other markets — particularly for clients with Pakistan-facing digital operations or who want to leverage Pakistani talent and cost efficiency for their digital build.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Settlix regulated in Pakistan?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div></div><div class="faq-a"><p>Settlix is operated by Purpose Technologies (Pvt) Ltd, registered with SECP. The platform is PCI DSS certified and implements AML/KYC controls on all transactions. For specific regulatory queries, please contact our team directly.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;">Get a Quote</div>
+      <div class="cta-title">Let's build<br>something <em>real.</em></div>
+      <p style="color:rgba(255,255,255,.55);font-size:.98rem;line-height:1.8;margin-top:18px;">Tell us what you need. We come back within 48 hours with a clear scope, realistic timeline, and a fixed price.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.86rem;">📧</span><span style="color:rgba(255,255,255,.6);font-size:.88rem;">contact@purposetechnologies.pk</span></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.86rem;">📍</span><span style="color:rgba(255,255,255,.6);font-size:.88rem;">Karachi, Pakistan</span></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input class="form-input" type="text" id="f-name" placeholder="Your Name" required>
+        <input class="form-input" type="email" id="f-email" placeholder="Email Address" required>
+      </div>
+      <input class="form-input" type="text" id="f-company" placeholder="Company / Business Name">
+      <select class="form-input form-select" id="f-service">
+        <option value="" disabled selected>Service Required</option>
+        <option>Web Development</option>
+        <option>Mobile App Development</option>
+        <option>CRM Design & Integration</option>
+        <option>Customer Support Services</option>
+        <option>Settlix — Payments Integration</option>
+        <option>Multiple Services</option>
+        <option>Not Sure — Need Consultation</option>
+      </select>
+      <textarea class="form-input form-textarea" id="f-msg" placeholder="Tell us about your project — what you need, rough timeline, budget range..."></textarea>
+      <button type="submit" class="form-submit" id="f-submit">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="ft-brand-name">Purpose Technologies</div>
+      <p class="ft-desc">Full-service digital solutions company based in Karachi, Pakistan. Web development, mobile apps, CRM, customer support, and the Settlix payments platform — built to grow with your business.</p>
+      <a href="mailto:contact@purposetechnologies.pk" class="ft-email">contact@purposetechnologies.pk</a>
+      <div style="margin-top:16px;"><span class="settlix-footer-badge">🔷 Settlix — Payments & Disbursements</span></div>
+    </div>
+    <div><div class="fc-h">Services</div><ul class="fc-ul"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile Apps</a></li><li><a href="#services">CRM Design</a></li><li><a href="#services">Customer Support</a></li><li><a href="#services">UI/UX Design</a></li><li><a href="#services">Cloud & DevOps</a></li></ul></div>
+    <div><div class="fc-h">Settlix</div><ul class="fc-ul"><li><a href="#settlix">Payments</a></li><li><a href="#settlix">Disbursements</a></li><li><a href="#settlix">Remittances</a></li><li><a href="#settlix">API Docs</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+    <div><div class="fc-h">Company</div><ul class="fc-ul"><li><a href="#clients">Our Clients</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Get a Quote</a></li><li><a href="#">Careers</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Purpose Technologies (Pvt) Ltd. Karachi, Pakistan. SECP Registered.</p>
+    <p>Settlix is a Purpose Technologies product. PCI DSS certified infrastructure.</p>
+  </div>
+</footer>
+
+<script>
+/* NAV SCROLL */
+window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30); });
+
+/* HERO CANVAS */
+const canvas=document.getElementById('hero-canvas');
+const ctx=canvas.getContext('2d');
+let nodes=[],w,h,raf;
+function resize(){w=canvas.width=canvas.offsetWidth;h=canvas.height=canvas.offsetHeight;}
+function init(){nodes=[];const c=Math.floor(w*h/14000);for(let i=0;i<c;i++)nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1});}
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>w)n.vx*=-1;if(n.y<0||n.y>h)n.vy*=-1;ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(0,125,191,.8)';ctx.fill();});
+  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle=`rgba(0,125,191,${.5*(1-d/120)})`;ctx.lineWidth=.8;ctx.stroke();}}
+  raf=requestAnimationFrame(draw);
+}
+resize();init();draw();
+window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();init();draw();});
+
+/* PRICING */
+function showPricing(tab,btn){
+  document.querySelectorAll('.pricing-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.pt').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pricing-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* FAQ */
+function toggleFaq(el){
+  const open=el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
+  if(!open){el.classList.add('open');el.nextElementSibling.classList.add('open');}
+}
+
+/* FORM */
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('f-submit');
+  const name=document.getElementById('f-name').value;
+  btn.textContent='Sending...';btn.style.opacity='.7';
+  setTimeout(()=>{
+    btn.textContent=`✓ Thanks, ${name.split(' ')[0]}! We'll respond within 48 hours.`;
+    btn.style.background='#059669';btn.style.color='white';btn.style.opacity='1';
+    e.target.reset();
+    setTimeout(()=>{btn.textContent='Send Enquiry →';btn.style.background='';btn.style.color='';},5000);
+  },1200);
+}
+</script>
+</body>
+</html>
