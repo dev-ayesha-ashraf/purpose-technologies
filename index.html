@@ -21,52 +21,52 @@ body{font-family:'Satoshi',sans-serif;background:var(--white);color:var(--ink);o
 a{text-decoration:none;}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;z-index:500;transition:all .3s;padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;}
-nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:64px;box-shadow:0 1px 20px rgba(0,0,0,.06);}
+nav{position:fixed;top:0;width:100%;z-index:500;transition:all .3s;padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.98);border-bottom:1px solid var(--border);}
+nav.scrolled{backdrop-filter:blur(20px);height:64px;box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#007dbf,#98c11a);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-mark svg{width:18px;height:18px;}
-.logo-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em;}
+.logo-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;color:var(--ink);font-weight:700;letter-spacing:-.01em;}
 .logo-name span{background:linear-gradient(135deg,#007dbf,#98c11a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 nav ul{list-style:none;display:flex;gap:36px;align-items:center;}
-nav ul a{font-size:.88rem;font-weight:500;color:var(--gray);transition:color .2s;}
+nav ul a{font-size:.88rem;font-weight:500;color:var(--ink);transition:color .2s;}
 nav ul a:hover{color:#007dbf;}
 .nav-actions{display:flex;gap:12px;align-items:center;}
-.btn-outline-n{border:1.5px solid var(--border);color:var(--ink);padding:8px 20px;border-radius:7px;font-size:.86rem;font-weight:500;transition:all .2s;}
+.btn-outline-n{border:1.5px solid var(--border);color:var(--ink);padding:8px 20px;border-radius:7px;font-size:.86rem;font-weight:500;transition:all .2s;background:white;}
 .btn-outline-n:hover{border-color:#007dbf;color:#007dbf;}
 .btn-solid-n{background:linear-gradient(135deg,#007dbf,#98c11a);color:white;padding:9px 22px;border-radius:7px;font-size:.86rem;font-weight:600;transition:all .2s;}
 .btn-solid-n:hover{opacity:.9;box-shadow:0 6px 20px rgba(0,125,191,.3);}
 
 /* HERO */
-.hero{min-height:100vh;position:relative;overflow:hidden;background:var(--ink);display:flex;align-items:center;padding:120px 6% 80px;}
-#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.35;}
-.hero-noise{position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none;}
+.hero{min-height:100vh;position:relative;overflow:hidden;background:linear-gradient(160deg,#f0f6ff 0%,#ffffff 60%);display:flex;align-items:center;padding:120px 6% 80px;}
+#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.12;}
+.hero-noise{position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E");pointer-events:none;}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(0,125,191,.07);border:1px solid rgba(0,125,191,.2);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
 .hc-dot{width:7px;height:7px;border-radius:50%;background:#98c11a;box-shadow:0 0 8px #98c11a;animation:glow 2s ease-in-out infinite;}
 @keyframes glow{0%,100%{opacity:1;}50%{opacity:.4;}}
-.hc-text{font-size:.76rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
-.hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(3.2rem,5.5vw,6.2rem);color:white;line-height:1.04;letter-spacing:-.03em;margin-bottom:24px;font-weight:700;}
+.hc-text{font-size:.76rem;color:#007dbf;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(3.2rem,5.5vw,6.2rem);color:var(--ink);line-height:1.04;letter-spacing:-.03em;margin-bottom:24px;font-weight:700;}
 .hero h1 .accent{color:#98c11a;}
-.hero h1 .thin{color:rgba(255,255,255,.35);font-weight:600;}
-.hero-desc{font-size:1.05rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:44px;font-weight:300;max-width:460px;}
+.hero h1 .thin{color:#9ca3af;font-weight:600;}
+.hero-desc{font-size:1.05rem;color:var(--gray);line-height:1.8;margin-bottom:44px;font-weight:300;max-width:460px;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
 .btn-primary{background:linear-gradient(135deg,#007dbf,#3fa8a0);color:white;padding:13px 28px;border-radius:8px;font-size:.92rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .25s;}
 .btn-primary:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,125,191,.4);}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:13px 28px;border-radius:8px;font-size:.92rem;font-weight:500;transition:all .25s;}
-.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:white;}
-.hero-stats{display:flex;gap:44px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08);}
-.hs-val{font-family:'Clash Display',sans-serif;font-size:2.4rem;color:white;letter-spacing:-.03em;}
-.hs-label{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:4px;}
+.btn-ghost{border:1.5px solid var(--border);color:var(--ink);padding:13px 28px;border-radius:8px;font-size:.92rem;font-weight:500;transition:all .25s;}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand);}
+.hero-stats{display:flex;gap:44px;padding-top:40px;border-top:1px solid var(--border);}
+.hs-val{font-family:'Clash Display',sans-serif;font-size:2.4rem;color:var(--ink);letter-spacing:-.03em;}
+.hs-label{font-size:.78rem;color:var(--gray-l);margin-top:4px;}
 .hero-cards{position:relative;height:460px;}
-.hcard{position:absolute;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;backdrop-filter:blur(12px);transition:transform .3s;}
+.hcard{position:absolute;background:white;border:1.5px solid var(--border);border-radius:14px;padding:20px 22px;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:transform .3s;}
 .hcard:hover{transform:translateY(-4px);}
 .hcard-1{top:0;left:0;right:60px;}
 .hcard-2{top:145px;right:0;left:60px;}
 .hcard-3{bottom:0;left:0;right:80px;}
 .hcard-icon{font-size:1.6rem;margin-bottom:10px;}
-.hcard-title{font-weight:600;color:white;font-size:.9rem;margin-bottom:5px;}
-.hcard-sub{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;}
+.hcard-title{font-weight:600;color:var(--ink);font-size:.9rem;margin-bottom:5px;}
+.hcard-sub{font-size:.78rem;color:var(--gray);line-height:1.6;}
 .hcard-badge{display:inline-block;background:var(--brand-p);border:1px solid var(--brand-b);color:var(--brand-l);padding:3px 10px;border-radius:4px;font-size:.68rem;font-weight:600;margin-top:10px;}
 
 /* TICKER */
@@ -138,7 +138,7 @@ nav ul a:hover{color:#007dbf;}
 .pricing-note{text-align:center;margin-top:28px;font-size:.82rem;color:var(--gray);}
 
 /* SETTLIX */
-.settlix-section{background:var(--ink);padding:96px 6%;}
+.settlix-section{background:#0f1923;padding:96px 6%;}
 .settlix-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:64px;}
 .settlix-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-brand-p);border:1px solid rgba(152,193,26,.3);padding:6px 16px;border-radius:100px;margin-bottom:16px;}
 .sb-label{font-size:.72rem;color:var(--green-brand-l);font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
@@ -196,11 +196,27 @@ nav ul a:hover{color:#007dbf;}
 .wp-title{font-weight:600;color:var(--ink);margin-bottom:5px;font-size:.96rem;}
 .wp-desc{font-size:.84rem;color:var(--gray);line-height:1.7;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.sg{background:white;border-radius:14px;border:1.5px solid var(--border);padding:28px 24px;transition:all .3s;}
+.sg{background:var(--cream);border-radius:14px;border:1.5px solid var(--border);padding:28px 24px;transition:all .3s;}
 .sg:hover{border-color:var(--brand-b);box-shadow:0 10px 30px rgba(0,125,191,.07);}
 .sg-val{font-family:'Clash Display',sans-serif;font-size:2.8rem;background:linear-gradient(135deg,#007dbf,#98c11a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.03em;}
 .sg-label{font-size:.82rem;color:var(--gray);margin-top:6px;line-height:1.5;}
 
+/* DOC TABS */
+function showDoc(tab,btn){
+  // find parent container to scope the tab switch
+  const btn_el = btn;
+  const container = btn_el.closest('.settlix-docs');
+  container.querySelectorAll('.doc-panel').forEach(p=>p.classList.remove('active'));
+  container.querySelectorAll('.doc-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('doc-'+tab).classList.add('active');
+  btn_el.classList.add('active');
+}
+function showDoc_old(tab,btn){
+  document.querySelectorAll('.doc-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.doc-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('doc-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
 /* FAQ */
 .faq-bg{background:var(--cream);}
 .faq-list{max-width:760px;margin:0 auto;}
@@ -215,7 +231,7 @@ nav ul a:hover{color:#007dbf;}
 .faq-a p{font-size:.9rem;color:var(--gray);line-height:1.8;}
 
 /* CTA / CONTACT */
-.cta-section{background:linear-gradient(135deg,#007dbf 0%,#3fa8a0 50%,#5ea830 100%);padding:96px 6%;position:relative;overflow:hidden;}
+.cta-section{background:#0f1923;padding:96px 6%;position:relative;overflow:hidden;}
 .cta-glow{position:absolute;top:-50%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 65%);pointer-events:none;}
 .cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
 .cta-title{font-family:'Clash Display',sans-serif;font-size:clamp(2.2rem,4.5vw,4.5rem);color:white;line-height:1.08;letter-spacing:-.03em;}
@@ -231,8 +247,8 @@ nav ul a:hover{color:#007dbf;}
 .form-submit:hover{box-shadow:0 8px 24px rgba(0,0,0,.2);transform:translateY(-2px);}
 
 /* FOOTER */
-footer{background:#08090e;padding:72px 6% 28px;}
-.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);}
+footer{background:#0d1520;padding:72px 6% 28px;}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
 .ft-brand-name{font-family:'Clash Display',sans-serif;font-size:1.2rem;color:white;margin-bottom:12px;}
 .ft-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.8;}
 .ft-email{color:var(--brand-l);font-size:.84rem;margin-top:14px;display:block;}
@@ -258,6 +274,42 @@ footer{background:#08090e;padding:72px 6% 28px;}
   nav ul,.nav-actions{display:none;}
   .pc.featured{transform:none;}
 }
+
+/* ── Settlix documentation tabs ── */
+.settlix-docs{margin-top:64px;border-top:1px solid rgba(255,255,255,.1);padding-top:56px;}
+.settlix-docs-head{font-size:.72rem;color:rgba(255,255,255,.3);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.settlix-docs-head::before{content:'//';color:var(--green-brand);}
+.doc-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:0;overflow-x:auto;}
+.doc-tab{
+  font-family:'Satoshi',sans-serif;font-size:.78rem;font-weight:600;
+  color:rgba(255,255,255,.4);letter-spacing:.04em;
+  padding:12px 22px;cursor:pointer;
+  border:none;background:transparent;
+  border-bottom:2px solid transparent;
+  transition:all .25s;white-space:nowrap;
+}
+.doc-tab:hover{color:rgba(255,255,255,.75);}
+.doc-tab.active{color:var(--green-brand);border-bottom-color:var(--green-brand);}
+.doc-panel{display:none;}
+.doc-panel.active{display:block;}
+.doc-content{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-top:none;border-radius:0 0 10px 10px;
+  padding:36px 40px;
+  max-height:520px;overflow-y:auto;
+}
+.doc-content::-webkit-scrollbar{width:6px;}
+.doc-content::-webkit-scrollbar-track{background:transparent;}
+.doc-content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px;}
+.dc-h1{font-family:'Clash Display',sans-serif;font-size:1.5rem;color:white;letter-spacing:-.01em;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1);}
+.dc-h2{font-family:'Clash Display',sans-serif;font-size:1rem;color:rgba(255,255,255,.85);letter-spacing:.01em;margin:22px 0 8px;font-weight:600;}
+.dc-p{font-size:.86rem;color:rgba(255,255,255,.45);line-height:1.85;margin-bottom:12px;font-weight:300;}
+.dc-li{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:8px;padding-left:16px;position:relative;}
+.dc-li::before{content:'—';position:absolute;left:0;color:var(--green-brand);font-size:.75rem;}
+.dc-faq-q{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:600;margin:20px 0 6px;display:flex;align-items:flex-start;gap:8px;}
+.dc-faq-q::before{content:'Q.';color:var(--green-brand);flex-shrink:0;font-size:.78rem;margin-top:2px;}
+.dc-faq-a{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:16px;padding-left:22px;font-weight:300;}
+
 </style>
 </head>
 <body>
@@ -288,9 +340,9 @@ footer{background:#08090e;padding:72px 6% 28px;}
   <div class="hero-noise"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-chip"><div class="hc-dot"></div><span class="hc-text">Digital Solutions Provider — Pakistan</span></div>
+      <div class="hero-chip"><div class="hc-dot"></div><span class="hc-text">Web · Apps · CRM · Support · Payments</span></div>
       <h1>Build Digital.<br><span style="color:#98c11a;">Scale</span> Further.<br><span class="thin">Deliver Always.</span></h1>
-      <p class="hero-desc">Purpose Technologies designs, builds, and supports the digital infrastructure that growing businesses depend on — from bespoke web and app development to CRM systems, customer support, and our payments product Settlix.</p>
+      <p class="hero-desc">Purpose Technologies builds world-class digital products for ambitious businesses — custom websites, mobile applications, CRM platforms, and fully managed customer support operations. Our payments product, Settlix, completes the picture with seamless payment and disbursement infrastructure.</p>
       <div class="hero-btns">
         <a href="#services" class="btn-primary">Explore Services →</a>
         <a href="#settlix" class="btn-ghost">Discover Settlix</a>
@@ -305,7 +357,7 @@ footer{background:#08090e;padding:72px 6% 28px;}
       <div class="hcard hcard-1">
         <div class="hcard-icon">🌐</div>
         <div class="hcard-title">Web & App Development</div>
-        <div class="hcard-sub">Custom web platforms, mobile applications, and API integrations built for performance and growth.</div>
+        <div class="hcard-sub">Custom websites, web apps, and mobile applications — built for performance, SEO, and real-world growth in Pakistan's digital economy.</div>
         <span class="hcard-badge">From PKR 15,000</span>
       </div>
       <div class="hcard hcard-2">
@@ -317,7 +369,7 @@ footer{background:#08090e;padding:72px 6% 28px;}
       <div class="hcard hcard-3">
         <div class="hcard-icon">🎯</div>
         <div class="hcard-title">CRM & Customer Support</div>
-        <div class="hcard-sub">Tailored CRM systems and managed customer support operations that convert and retain.</div>
+        <div class="hcard-sub">Custom CRM systems and fully managed customer support operations — designed to convert leads and retain customers at scale.</div>
         <span class="hcard-badge">From PKR 80,000</span>
       </div>
     </div>
@@ -349,9 +401,9 @@ footer{background:#08090e;padding:72px 6% 28px;}
     <div class="services-top">
       <div>
         <span class="s-label">What We Do</span>
-        <h2 class="s-title">Full-service digital<br>for every <em>stage</em></h2>
+        <h2 class="s-title">Built for growth.<br>Backed by <em>expertise.</em></h2>
       </div>
-      <p class="s-sub">From your first website to enterprise-grade infrastructure — Purpose Technologies delivers across the full digital stack. Every service is in-house, every team is local, and every delivery is accountable.</p>
+      <p class="s-sub">Purpose Technologies is a full-service technology company specialising in web and app development, CRM design, and customer support operations. Every service is delivered in-house from Karachi — no subcontracting, direct accountability.</p>
     </div>
     <div class="services-grid">
       <div class="sc"><div class="sc-icon">🌐</div><div class="sc-title">Web Development</div><div class="sc-desc">Custom websites and web applications built for performance, SEO, and conversion. From corporate landing pages to full-stack e-commerce and SaaS platforms.</div><div class="sc-tags"><span class="tag">React / Next.js</span><span class="tag">Laravel</span><span class="tag">WordPress</span><span class="tag">E-Commerce</span></div></div>
@@ -365,7 +417,7 @@ footer{background:#08090e;padding:72px 6% 28px;}
 </section>
 
 <!-- PRICING -->
-<section class="section" id="pricing">
+<section class="section" id="pricing" style="background:var(--cream);">
   <div class="si">
     <div class="s-center">
       <span class="s-label">Transparent Pricing</span>
@@ -621,6 +673,102 @@ footer{background:#08090e;padding:72px 6% 28px;}
         </ul>
       </div>
 
+
+<!-- Settlix Documentation Tabs -->
+<div class="settlix-docs">
+  <div class="settlix-docs-head">Documentation</div>
+  <div class="doc-tabs">
+    <button class="doc-tab active" onclick="showDoc('sfaq',this)">FAQ</button>
+    <button class="doc-tab" onclick="showDoc('sprivacy',this)">Privacy Policy</button>
+    <button class="doc-tab" onclick="showDoc('sterms',this)">Terms &amp; Conditions</button>
+    <button class="doc-tab" onclick="showDoc('srefund',this)">Refund Policy</button>
+  </div>
+
+  <div class="doc-panel active" id="doc-sfaq">
+    <div class="doc-content">
+      <div class="dc-h1">Frequently Asked Questions</div>
+      <div class="dc-faq-q">How Does Purpose Technologies Work?</div>
+      <div class="dc-faq-a">Purpose Technologies' all-in-one payment platform enables businesses to manage online payments and disbursements with ease. Through one integrated dashboard, companies can access a unified view of balances across collections and payouts, covering various regions and currencies. Our platform is built for flexibility, helping businesses gain full control of their financial operations. Additionally, our built-in authentication, identity verification, and fraud detection tools ensure a secure transaction environment, empowering businesses to confidently accept legitimate payments while minimizing risk.</div>
+      <div class="dc-faq-q">Is Purpose Technologies easy to integrate with?</div>
+      <div class="dc-faq-a">Yes! Purpose Technologies offers multiple integration options to suit different business needs. Our hosted payment pages enable businesses to collect payment information securely and redirect customers to a safe checkout experience. Integration is made easy with well-documented APIs, clear technical guidelines, and a comprehensive FAQ repository. Our dedicated support team is also available to assist throughout the integration journey.</div>
+      <div class="dc-faq-q">Which payment methods does Purpose Technologies support?</div>
+      <div class="dc-faq-a">Purpose Technologies supports a wide range of payment methods including major card schemes, direct debits, vouchers, digital wallets, and bank transfers. We focus on offering localized and consumer-friendly solutions — whether through secure digital wallets, regional voucher systems, or traditional banking rails.</div>
+    </div>
+  </div>
+
+  <div class="doc-panel" id="doc-sprivacy">
+    <div class="doc-content">
+      <div class="dc-h1">Privacy Policy</div>
+      <div class="dc-p">This Privacy Policy outlines the principles and practices that Purpose Technologies (SMC-Private) Limited ("Company") adheres to in collecting, processing, using, disclosing, retaining, and managing personal data of our customers ("Users"). This policy does not cover any external websites or services not under our ownership, control, or authority.</div>
+      <div class="dc-h2">1. Definitions</div>
+      <div class="dc-p">Unless otherwise specified, all capitalized terms in this Policy shall have the meanings assigned to them in our Terms and Conditions.</div>
+      <div class="dc-h2">2. Scope of Policy</div>
+      <div class="dc-p">This Privacy Policy governs the collection, use, retention, storage, protection, management, and deletion of Users' Personal Data across all departments within the Company. All employees and contractors with access to this Personal Data must strictly follow this Policy.</div>
+      <div class="dc-h2">3. What Personal Data We Collect</div>
+      <div class="dc-p">Personal Data means information that can be used to directly or indirectly identify an individual. This includes:</div>
+      <div class="dc-li">Contact Information: Names, postal addresses, telephone numbers, and email addresses.</div>
+      <div class="dc-li">Financial Information: Payment card numbers, bank account details, and transaction histories.</div>
+      <div class="dc-li">Identification Data: Government-issued identification numbers (CNIC, NTN, Passport), driver's license numbers.</div>
+      <div class="dc-li">Biometric Data: Fingerprints, facial recognition data, and other biometric identifiers where applicable.</div>
+      <div class="dc-li">Device and Usage Data: IP addresses, browser types, operating system details, and usage patterns.</div>
+      <div class="dc-li">Transaction Data: Details about transactions conducted through the Company's services.</div>
+      <div class="dc-li">Communication Data: Records of communications between Users and the Company.</div>
+      <div class="dc-li">Geolocation Data: Information about a User's location when accessing the Digital Platform.</div>
+      <div class="dc-li">KYC Data: Additional verification information required for regulatory compliance, such as photographs and utility bills.</div>
+      <div class="dc-li">Fraud Detection Data: Patterns and indicators used to identify and prevent fraudulent activities.</div>
+      <div class="dc-li">Third-Party Data: Information obtained from credit bureaus, identity verification partners, and public databases.</div>
+      <div class="dc-h2">4. Collection, Use &amp; Disclosure of Personal Data</div>
+      <div class="dc-p">The Company collects and processes Personal Data for the following purposes: Account Registration, User Relationship Management, Service Fulfillment, Legal Compliance, Contractual Obligations, and Service &amp; Product Enhancement.</div>
+      <div class="dc-h2">Contact</div>
+      <div class="dc-p">For privacy-related queries, contact us at <strong style="color:rgba(152,193,26,.8);">support@purpose-tech.com</strong>.</div>
+    </div>
+  </div>
+
+  <div class="doc-panel" id="doc-sterms">
+    <div class="doc-content">
+      <div class="dc-h1">Terms &amp; Conditions</div>
+      <div class="dc-h2">Acknowledgment and Acceptance</div>
+      <div class="dc-p">By accessing and using this website (the "Digital Platform") provided by Purpose Technologies (SMC-Private) Limited (the "Company"), you acknowledge and agree to comply with these Terms and Conditions. Your continued use of this Digital Platform constitutes your full acceptance of these Terms. If you do not agree with any part of these Terms, you must immediately stop using the Digital Platform.</div>
+      <div class="dc-h2">Definitions</div>
+      <div class="dc-li"><strong style="color:rgba(255,255,255,.7);">Company / We / Us:</strong> Refers to Purpose Technologies (SMC-Private) Limited, its affiliates, subsidiaries, and related companies.</div>
+      <div class="dc-li"><strong style="color:rgba(255,255,255,.7);">You / User:</strong> The individual and/or corporate entity accessing this Digital Platform.</div>
+      <div class="dc-li"><strong style="color:rgba(255,255,255,.7);">Digital Platform:</strong> The Company's online interface offering access to its B2B services through a contact support form.</div>
+      <div class="dc-li"><strong style="color:rgba(255,255,255,.7);">Services:</strong> All regulated digital and/or financial activities provided by the Company through its Digital Platform.</div>
+      <div class="dc-li"><strong style="color:rgba(255,255,255,.7);">Personal Data:</strong> Information that can be used to directly or indirectly identify an individual, as detailed in the Privacy Policy.</div>
+      <div class="dc-h2">Disclaimer</div>
+      <div class="dc-p">This Digital Platform is provided "as is" for general informational purposes only. While we strive to offer accurate and up-to-date information, we make no guarantees regarding accuracy, completeness, or reliability. The Company disclaims all liability for any errors, omissions, or consequences arising from the use of this information.</div>
+      <div class="dc-h2">Use of Services</div>
+      <div class="dc-p">Services provided on this Digital Platform are for informational and planning purposes only. If you are an individual, you must be at least 18 years old and have full legal capacity to engage with our Services. Businesses must ensure compliance with applicable laws.</div>
+      <div class="dc-h2">Copyright Notice &amp; Limited Authorization</div>
+      <div class="dc-p">All content on this Digital Platform — including text, graphics, and icons — is copyrighted material owned exclusively by the Company. Users are granted a limited right to access and use materials for non-commercial informational purposes only. All copies must include the Company's copyright notice.</div>
+      <div class="dc-h2">Limitation of Liability</div>
+      <div class="dc-p">The Company shall not be liable for any indirect, incidental, special, consequential, or punitive damages. Our total aggregate liability shall not exceed the amount paid by you for the Services in the three months preceding the claim.</div>
+      <div class="dc-h2">Contact</div>
+      <div class="dc-p">For queries related to these Terms, contact us at <strong style="color:rgba(152,193,26,.8);">support@purpose-tech.com</strong>.</div>
+    </div>
+  </div>
+
+  <div class="doc-panel" id="doc-srefund">
+    <div class="doc-content">
+      <div class="dc-h1">Refund Policy</div>
+      <div class="dc-h2">Overview</div>
+      <div class="dc-p">At Purpose Technologies (SMC-Private) Limited, our goal is to establish a reliable and secure platform for our customers. We strive to ensure complete customer satisfaction. Due to the nature of our services, refunds or credit provisions are generally not provided unless explicitly stated in our Service Agreements. However, we do offer refunds according to the policies outlined below.</div>
+      <div class="dc-h2">Refund Eligibility</div>
+      <div class="dc-li">Customers must request a refund within <strong style="color:rgba(255,255,255,.7);">fourteen (14) days</strong> of availing any of our services. Requests made beyond this period will not be eligible.</div>
+      <div class="dc-li">Before processing any refunds, Company officers will verify the actual delivery of services and confirm that quality was not improved despite persistent requests.</div>
+      <div class="dc-li">No refunds will be issued for services outside the specified 14-day period.</div>
+      <div class="dc-h2">How to Request a Refund</div>
+      <div class="dc-p">Please write to <strong style="color:rgba(152,193,26,.8);">support@purpose-tech.com</strong> with your refund request, providing all necessary details to expedite processing.</div>
+      <div class="dc-h2">Limitation of Liability</div>
+      <div class="dc-p">Refunds are limited to the cost of actual services purchased and do not include indirect or consequential damages. They will be issued to the original payment method used at the time of purchase.</div>
+      <div class="dc-h2">Changes to This Policy</div>
+      <div class="dc-p">The Company reserves the right to modify this policy at any time. Such modifications are effective immediately upon posting on our website. Your continued use of our services indicates acceptance of any revisions.</div>
+      <div class="dc-h2">Contact</div>
+      <div class="dc-p">For refund queries, contact us at <strong style="color:rgba(152,193,26,.8);">support@purpose-tech.com</strong>.</div>
+    </div>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -670,7 +818,7 @@ footer{background:#08090e;padding:72px 6% 28px;}
         <h2 class="s-title">Built different,<br><em>delivered different</em></h2>
         <div class="why-points">
           <div class="wp"><div class="wp-num">01</div><div><div class="wp-title">Pakistan-first mindset</div><div class="wp-desc">Every product is optimised for Pakistan's network conditions, payment infrastructure, and user behaviour. We don't port foreign templates — we build for where you operate.</div></div></div>
-          <div class="wp"><div class="wp-num">02</div><div><div class="wp-title">One team, full stack</div><div class="wp-desc">Design, frontend, backend, mobile, DevOps, and QA are all in-house. No subcontracting — direct accountability and faster delivery.</div></div></div>
+          <div class="wp"><div class="wp-num">02</div><div><div class="wp-title">One in-house team, full stack</div><div class="wp-desc">Web, mobile, CRM, DevOps, QA, and customer support — all delivered by our Karachi team. No subcontracting means you always know who is accountable and delivery is always faster.</div></div></div>
           <div class="wp"><div class="wp-num">03</div><div><div class="wp-title">Settlix advantage</div><div class="wp-desc">Clients who build with Purpose Technologies get Settlix at preferential rates. Your product ships with Pakistan's best payments infrastructure built in.</div></div></div>
           <div class="wp"><div class="wp-num">04</div><div><div class="wp-title">Long-term partnerships</div><div class="wp-desc">We don't do transactional project work. Our model is long-term: retainer support, ongoing development, and shared accountability for results.</div></div></div>
         </div>
@@ -711,9 +859,17 @@ footer{background:#08090e;padding:72px 6% 28px;}
       <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;">Get a Quote</div>
       <div class="cta-title">Let's build<br>something <em>real.</em></div>
       <p style="color:rgba(255,255,255,.55);font-size:.98rem;line-height:1.8;margin-top:18px;">Tell us what you need. We come back within 48 hours with a clear scope, realistic timeline, and a fixed price.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px;">
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.86rem;">📧</span><span style="color:rgba(255,255,255,.6);font-size:.88rem;">contact@purposetechnologies.pk</span></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.86rem;">📍</span><span style="color:rgba(255,255,255,.6);font-size:.88rem;">Karachi, Pakistan</span></div>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:28px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="font-size:.9rem;margin-top:2px;">📧</span><span style="color:rgba(255,255,255,.65);font-size:.88rem;">contact@purposetechnologies.pk</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="font-size:.9rem;margin-top:2px;">📍</span><div style="display:flex;flex-direction:column;gap:3px;"><span style="color:rgba(255,255,255,.65);font-size:.88rem;">Seeds Coworking, 1st Floor, Nelson Chambers</span><span style="color:rgba(255,255,255,.65);font-size:.88rem;">I.I Chundrigar Road, Karachi, Pakistan</span></div></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="font-size:.9rem;margin-top:2px;">🗺️</span><a href="https://www.google.com/maps?q=24.85014,67.009306" target="_blank" style="color:rgba(152,193,26,.8);font-size:.82rem;font-weight:500;text-decoration:underline;text-underline-offset:3px;">View on Google Maps →</a></div>
+      </div>
+      <div style="margin-top:28px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.12);">
+        <iframe
+          src="https://maps.google.com/maps?q=24.85014,67.009306&z=16&output=embed"
+          width="100%" height="200" style="border:0;display:block;filter:grayscale(20%) brightness(.85);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
     <form class="contact-form" onsubmit="handleSubmit(event)">
@@ -743,6 +899,7 @@ footer{background:#08090e;padding:72px 6% 28px;}
     <div>
       <div class="ft-brand-name">Purpose Technologies</div>
       <p class="ft-desc">Full-service digital solutions company based in Karachi, Pakistan. Web development, mobile apps, CRM, customer support, and the Settlix payments platform — built to grow with your business.</p>
+      <p style="font-size:.76rem;color:rgba(255,255,255,.3);margin-top:12px;line-height:1.7;">Seeds Coworking, 1st Floor<br>Nelson Chambers, I.I Chundrigar Road<br>Karachi, Pakistan</p>
       <a href="mailto:contact@purposetechnologies.pk" class="ft-email">contact@purposetechnologies.pk</a>
       <div style="margin-top:16px;"><span class="settlix-footer-badge">🔷 Settlix — Payments & Disbursements</span></div>
     </div>
@@ -768,8 +925,8 @@ function resize(){w=canvas.width=canvas.offsetWidth;h=canvas.height=canvas.offse
 function init(){nodes=[];const c=Math.floor(w*h/14000);for(let i=0;i<c;i++)nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1});}
 function draw(){
   ctx.clearRect(0,0,w,h);
-  nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>w)n.vx*=-1;if(n.y<0||n.y>h)n.vy*=-1;ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(0,125,191,.8)';ctx.fill();});
-  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle=`rgba(0,125,191,${.5*(1-d/120)})`;ctx.lineWidth=.8;ctx.stroke();}}
+  nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>w)n.vx*=-1;if(n.y<0||n.y>h)n.vy*=-1;ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(0,125,191,.5)';ctx.fill();});
+  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle=`rgba(0,125,191,${.25*(1-d/120)})`;ctx.lineWidth=.8;ctx.stroke();}}
   raf=requestAnimationFrame(draw);
 }
 resize();init();draw();
@@ -783,6 +940,13 @@ function showPricing(tab,btn){
   btn.classList.add('active');
 }
 
+/* DOC TABS */
+function showDoc(tab,btn){
+  document.querySelectorAll('.doc-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.doc-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('doc-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
 /* FAQ */
 function toggleFaq(el){
   const open=el.classList.contains('open');
